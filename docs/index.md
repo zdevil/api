@@ -7,10 +7,10 @@ Contents
 --------
 
 ### Getting Started
-* [Getting a token](https://github.com/okta/api/blob/master/docs/getting_started/getting_a_token.md)
-* [Design principals](https://github.com/okta/api/blob/master/docs/getting_started/design_principles.md)
+* [Getting a token](getting_started/getting_a_token.md)
+* [Design principals](getting_started/design_principles.md)
 
 ### Endpoints
-* [Users](https://github.com/okta/api/blob/master/docs/endpoints/users.md)
-* [Groups](https://github.com/okta/api/blob/master/docs/endpoints/groups.md)
-* [Sessions](https://github.com/okta/api/blob/master/docs/endpoints/sessions.md)
+* [Users](endpoints/users.md)
+* [Groups](endpoints/groups.md)
+* [Sessions](endpoints/sessions.md)
