@@ -64,7 +64,7 @@ Request
 
     curl -v -H "Authorization:SSWS yourtoken" -H "Accept:application/json" -H "Content-type:application/json" -X DELETE https://your-domain.okta.com/api/v1/users/0uh4rryp0tt3r 
 
-## List appLinks
+## List app links
 
 #### GET /users/:id/appLinks
 
