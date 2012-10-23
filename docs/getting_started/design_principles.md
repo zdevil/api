@@ -4,7 +4,7 @@
 
 Profiles are associative arrays that appear on objects (users and groups).  Profiles have both required and optional properties.  For users, the required properties are: firstName, lastName, email, login and mobilePhone.  For groups, the required properties are: name and description.
 
-#### Creation semantics
+#### Create semantics
 
 When creating an object, the profile of the object with all required properties should be provided in the POST body.  The request will echo back the profile, as well as an id uniquely identifying the object.
 
@@ -14,7 +14,7 @@ When updating an object, the profile of the object with all required properties 
 
 #### Delete semantics
 
-Deleting an object will return a no response status code if successful.
+Deleting an object with the DELETE method will return a no response status code if successful.
 
 #### URL space
 
