@@ -14,11 +14,11 @@ When updating an object, the profile of the object with all required properties 
 
 #### Delete semantics
 
-Deleting an object will return a no response status code if successful.
+Deleting an object will return a no response status code if sucessful.
 
 #### URL space
 
-All URLs listed in the documentation should be preceded with https://<yoursubdomain>.okta.com/api/<apiversion>
+All URLs listed in the documentation should be preceeded with https://<yoursubdomain>.okta.com/api/<apiversion>
 
 The apiversion is v1 for API version 1.
 
