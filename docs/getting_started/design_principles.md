@@ -18,7 +18,7 @@ Deleting an object with the DELETE method will return a no response status code 
 
 #### URL space
 
-All URLs listed in the documentation should be preceded with https://<yoursubdomain>.okta.com/api/<apiversion>
+All URLs listed in the documentation should be preceded with https://&lt;yoursubdomain&gt;.okta.com/api/&lt;apiversion&gt;
 
 The apiversion is v1 for API version 1.
 
