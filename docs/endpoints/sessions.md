@@ -8,7 +8,7 @@ Create a new session.
 
 Request
 
-    curl -v -H "Content-type:application/json" -H "Authorization:SSWS 00AOUoIwLOmGwc9ky05iCPcp-BpTQL7C3oxfZyqElt_QA" -H "Accept:application/json" -X POST http://asdf.okta1.com:1802/api/v1/sessions/ -d '{"username": "userld2NCKABLEUKRMOT@asdf.com", "password": "secretPass"}'
+    curl -v -H "Content-type:application/json" -H "Authorization:SSWS 00AOUoIwLOmGwc9ky05iCPcp-BpTQL7C3oxfZyqElt_QA" -H "Accept:application/json" -X POST https://your-subdomain.okta.com/api/v1/sessions/ -d '{"username": "userld2NCKABLEUKRMOT@asdf.com", "password": "secretPass"}'
 
 Response
 
@@ -22,7 +22,7 @@ Validate the session.
 
 Request
 
-    curl -v -H "Content-type:application/json" -H "Authorization:SSWS 00AOUoIwLOmGwc9ky05iCPcp-BpTQL7C3oxfZyqElt_QA" -H "Accept:application/json" -X GET http://asdf.okta1.com:1802/api/v1/sessions/000rWcxHV-lQUOzBhLJLYTl0Q
+    curl -v -H "Content-type:application/json" -H "Authorization:SSWS 00AOUoIwLOmGwc9ky05iCPcp-BpTQL7C3oxfZyqElt_QA" -H "Accept:application/json" -X GET https://your-subdomain.okta.com/api/v1/sessions/000rWcxHV-lQUOzBhLJLYTl0Q
 
 Response
 
@@ -36,7 +36,7 @@ Extend the session.
 
 Request
 
-    curl -v -H "Content-type:application/json" -H "Authorization:SSWS 00AOUoIwLOmGwc9ky05iCPcp-BpTQL7C3oxfZyqElt_QA" -H "Accept:application/json" -X PUT http://asdf.okta1.com:1802/api/v1/sessions/000rWcxHV-lQUOzBhLJLYTl0Q
+    curl -v -H "Content-type:application/json" -H "Authorization:SSWS 00AOUoIwLOmGwc9ky05iCPcp-BpTQL7C3oxfZyqElt_QA" -H "Accept:application/json" -X PUT https://your-subdomain.okta.com/api/v1/sessions/000rWcxHV-lQUOzBhLJLYTl0Q
 
 Response
 
@@ -50,4 +50,4 @@ Clear the session.
 
 Request
 
-    curl -v -H "Content-type:application/json" -H "Authorization:SSWS 00AOUoIwLOmGwc9ky05iCPcp-BpTQL7C3oxfZyqElt_QA" -H "Accept:application/json" -X DELETE http://asdf.okta1.com:1802/api/v1/sessions/000rWcxHV-lQUOzBhLJLYTl0Q
+    curl -v -H "Content-type:application/json" -H "Authorization:SSWS 00AOUoIwLOmGwc9ky05iCPcp-BpTQL7C3oxfZyqElt_QA" -H "Accept:application/json" -X DELETE https://your-subdomain.okta.com/api/v1/sessions/000rWcxHV-lQUOzBhLJLYTl0Q
