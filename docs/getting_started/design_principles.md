@@ -39,7 +39,7 @@ All requests on error will return four fields:
 
 #### Media types
 
-The API currently only supports JSON as an exchange format.
+The API currently only supports JSON as an exchange format.  Be sure to set both the Content-type and Accept headers for every request as application/json.
 
 #### 411 bug
 
