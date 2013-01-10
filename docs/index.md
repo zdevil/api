@@ -9,6 +9,7 @@ Contents
 ### Getting Started
 * [Getting a token](getting_started/getting_a_token.md)
 * [Design principles](getting_started/design_principles.md)
+* [Error Codes](getting_started/error_codes.md)
 
 ### Endpoints
 * [Users](endpoints/users.md)
