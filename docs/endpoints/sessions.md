@@ -11,7 +11,7 @@ Create a new session.
 - cookieTokenUrl: A URL which, when called, will set the session cookie in your browser for 
 the session you've just created and render a transparent 1x1 pixel image. Contained within 
 the URL is a one-time token which will expire after the first call, after which a GET on this 
-URL will have no effect on your cookies. Example [here](/examples/session_cookie.md).
+URL will have no effect on your cookies. Example [here](/docs/examples/session_cookie.md).
 
 Request
 
