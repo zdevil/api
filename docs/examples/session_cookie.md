@@ -25,7 +25,7 @@ Response:
 This URL can then be embedded in an image tag:
 
 ```html
-<img src="https://acme.okta.com/login/sessionCookie?token=009Db9G6Sc8o8VfE__SlGj4FPxaG63Wm89TpJnaDF6">
+<img src="https://your-subdomain.okta.com/login/sessionCookie?token=009Db9G6Sc8o8VfE__SlGj4FPxaG63Wm89TpJnaDF6">
 ```
 
 When the page containing the tag is loaded, the token in the request will be used to 
