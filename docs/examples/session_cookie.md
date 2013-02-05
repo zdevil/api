@@ -2,7 +2,7 @@
 
 The session creation endpoint allows you to create a session and optionally include a 
 one-time token URL in the response which will allow you to get a cookie for that session
- in the browser. (See the [Sessions documentation](/endpoints/sessions.md) for more 
+ in the browser. (See the [Sessions documentation](/docs/endpoints/sessions.md) for more 
  information on this endpoint.)
 
 Request:<br>
