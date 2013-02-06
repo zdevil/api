@@ -99,7 +99,9 @@ Response
 
 #### POST /users/:id/lifecycle/activate
 
-Activate a user. Returns an activation link for the user to set up their account.
+Activate a user. Returns an activation link for the user to set up their account. If we return a null URL, the
+user has been successfully activated but they do not have a specific welcome link, such as Active Directory users logging
+into Okta with delegated authentication.
 
 #### Parameters
 **sendEmail** (Optional) Sends welcome email if true. Defaults to true.
