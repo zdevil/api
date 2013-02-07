@@ -18,6 +18,9 @@ Response
 
 #### GET /groups
 
+##### Parameters
+**q** (Optional) Search by all or part of the group name. E.G. /groups?q=every
+
 Fetch a list of groups.
 
 Request
