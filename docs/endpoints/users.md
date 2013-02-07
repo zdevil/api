@@ -6,7 +6,7 @@
 
 Create a user. 
 
-#### Parameters
+##### Parameters
 **activate** (Optional) Activates user if true. Defaults to true.
 
 Request
