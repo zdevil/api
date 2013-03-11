@@ -99,9 +99,8 @@ Response
 
 #### POST /users/:id/lifecycle/activate
 
-Activate a user. Returns an activation link for the user to set up their account. If we return a null URL, the
-user has been successfully activated but they do not have a specific welcome link, such as Active Directory users logging
-into Okta with delegated authentication.
+Activate a user. Returns empty response by default. When *sendEmail* is false, returns an activation link for the user
+to set up their account.
 
 #### Parameters
 **sendEmail** (Optional) Sends welcome email if true. Defaults to true.
@@ -119,7 +118,7 @@ Response
 #### POST /users/:id/lifecycle/reset_password
 
 Resets the password for a user. The user will not be able to log in until they complete the reset. 
-Returns a link for the user to reset their password.
+Returns empty response by default. When *sendEmail* is false, returns a link for the user to reset their password.
 
 #### Parameters
 **sendEmail** (Optional) Sends reset password email if true. Defaults to true.
@@ -136,7 +135,8 @@ Response
 
 #### POST /users/:id/lifecycle/forgot_password
 
-Returns a link for the user to reset their password. The request does not affect the status of the user.
+Returns empty response by default. When *sendEmail* is false, returns a link for the user to reset their password. 
+The request does not affect the status of the user.
 
 #### Parameters
 **sendEmail** (Optional) Sends forgot password email if true. Defaults to true.
