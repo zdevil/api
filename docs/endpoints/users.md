@@ -33,11 +33,19 @@ Response
 
 #### GET /users/:id
 
-Fetch a specific user.
+Fetch a specific user. The user can be retrieved via their ID, login, or login shortname (as long as it is unambiguous).
 
-Request
+Request (with ID)
 
     curl -v -H "Authorization:SSWS yourtoken" -H "Accept:application/json" -H "Content-type:application/json" -X GET https://your-domain.okta.com/api/v1/users/0uh4rryp0tt3r 
+
+Response
+
+    { "id": "0uh4rryp0tt3r", "profile": { "firstName": "Harry", "lastName": "Potter", "email": "hpotter@4privetdrive.com", "login": "hpotter@hogwarts.edu", "mobilePhone": "555-555-5555" } }
+
+Request (with login)
+
+    curl -v -H "Authorization:SSWS yourtoken" -H "Accept:application/json" -H "Content-type:application/json" -X GET https://your-domain.okta.com/api/v1/users/hpotter@hogwarts.edu
 
 Response
 
