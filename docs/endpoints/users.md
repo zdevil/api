@@ -206,14 +206,50 @@ curl -v -H "Authorization:SSWS yourtoken" \
 Response
 ```json
 [
-  {
-    "label": "Employee Box", 
-    "link": "/home/boxnet/0oaabcdefg/123"
-  }, 
-  {
-    "label": "Company ABIResearch", 
-    "link": "/home/0oahijklmnop/4567"
-  }
+    {
+        "label": "Google Apps Mail",
+        "linkUrl": "https://your-domainokta.com/home/google/0oa3omz2i9XRNSRIHBZO/50",
+        "logoUrl": "https://your-domain.okta.com/img/logos/google-mail.png",
+        "appName": "google",
+        "appInstanceId": "0oa3omz2i9XRNSRIHBZO",
+        "appAssignmentId": "0ua3omz7weMMMQJERBKY",
+        "credentialsSetup": false,
+        "hidden": false,
+        "sortOrder": 0
+    },
+    {
+        "label": "Google Apps Calendar",
+        "linkUrl": "https://your-domain.okta.com/home/google/0oa3omz2i9XRNSRIHBZO/54",
+        "logoUrl": "https://your-domain.okta.com/img/logos/google-calendar.png",
+        "appName": "google",
+        "appInstanceId": "0oa3omz2i9XRNSRIHBZO",
+        "appAssignmentId": "0ua3omz7weMMMQJERBKY",
+        "credentialsSetup": false,
+        "hidden": false,
+        "sortOrder": 1
+    },
+    {
+        "label": "Box",
+        "linkUrl": "https://your-domain.okta.com/home/boxnet/0oa3ompioiQCSTOYXVBK/72",
+        "logoUrl": "https://your-domain.okta.com/img/logos/box.png",
+        "appName": "boxnet",
+        "appInstanceId": "0oa3ompioiQCSTOYXVBK",
+        "appAssignmentId": "0ua3omx46lYEZLPPRWBO",
+        "credentialsSetup": false,
+        "hidden": false,
+        "sortOrder": 3
+    },
+    {
+        "label": "Salesforce.com",
+        "linkUrl": "https://your-domain.okta.com/home/salesforce/0oa12ecnxtBQMKOXJSMF/46",
+        "logoUrl": "https://your-domain.okta.com/img/logos/salesforce_logo.png",
+        "appName": "salesforce",
+        "appInstanceId": "0oa12ecnxtBQMKOXJSMF",
+        "appAssignmentId": "0ua173qgj5VAVOBQMCVB",
+        "credentialsSetup": true,
+        "hidden": false,
+        "sortOrder": 2
+    }
 ]
 ```
 ## List groups
