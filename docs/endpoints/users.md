@@ -293,7 +293,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
   },
   "credentials": {
     "recovery_question": {
-      "question": "Who's a major player in the cowboy scene?",
+      "question": "Who\'s a major player in the cowboy scene?",
       "answer": "Cowboy Dan"
     }
   }
@@ -404,7 +404,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
   "credentials": {
     "password" : { "value": "GoAw@y123" },
     "recovery_question": {
-      "question": "Who's a major player in the cowboy scene?",
+      "question": "Who\'s a major player in the cowboy scene?",
       "answer": "Cowboy Dan"
     }
   }
