@@ -1361,7 +1361,7 @@ recovery_question | Answer to user's current recovery question | Body | [Recover
 curl -v -H "Authorization:SSWS yourtoken" \
 -H "Accept:application/json" \
 -H "Content-type:application/json" \
--X PUT https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/forgot_password \
+-X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/forgot_password \
 -d \
 '{
     "password": { "value": "MyN3wP@55w0rd" }, 
@@ -1408,7 +1408,7 @@ newPassword | New password for user | Body | [Password Object](#password-object)
 curl -v -H "Authorization:SSWS yourtoken" \
 -H "Accept:application/json" \
 -H "Content-type:application/json" \
--X PUT https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/change_password \
+-X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/change_password \
 -d \
 '{
     "oldPassword": { "value": "GoAw@y123" },
@@ -1455,7 +1455,7 @@ recovery_question | New recovery question & answer for user| Body | [Recovery Qu
 curl -v -H "Authorization:SSWS yourtoken" \
 -H "Accept:application/json" \
 -H "Content-type:application/json" \
--X PUT https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/change_recovery_question \
+-X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/change_recovery_question \
 -d \
 '{
     "password": { "value": "GoAw@y123" }, 
