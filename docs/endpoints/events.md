@@ -33,16 +33,16 @@ Every organization has a system log that maintains a history of actions performe
     "actors": [
         {
             "id": "00u3gjksoiRGRAZHLSYV",
-            "displayName": "Karl McGuinness",
-            "login": "me@karlmcguinness.com",
+            "displayName": "Samus Aran",
+            "login": "samus.aran@example.com",
             "objectType": "User"
         }
     ],
     "targets": [
         {
             "id": "00u3gjksoiRGRAZHLSYV",
-            "displayName": "Karl McGuinness",
-            "login": "me@karlmcguinness.com",
+            "displayName": "Samus Aran",
+            "login": "samus.aran@example.com",
             "objectType": "User"
         },
         {
