@@ -90,7 +90,7 @@ Requests that return a list of resources may support paging.  Pagination is base
 cursor and not on page number. The cursor is opaque to the client and specified in either the `?before` or `?after` query parameter.  For some resources, you can also set a custom page size with the `?limit` parameter.
 
 Note that for technical reasons not all endpoints respect pagination or the `?limit` parameter,
-see the [Events](endpoints/events.md) API for example.
+see the [Events](../endpoints/events.md) API for example.
 
 
 `before`
