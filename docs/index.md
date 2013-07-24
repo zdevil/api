@@ -16,6 +16,7 @@ Contents
 * [Groups](endpoints/groups.md)
 * [Sessions](endpoints/sessions.md)
 * [Tokens](endpoints/tokens.md)
+* [Events](endpoints/events.md)
 
 ### Examples
 * [Retrieving a session cookie with a hidden image](examples/session_cookie.md)
