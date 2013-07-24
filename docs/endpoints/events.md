@@ -381,7 +381,7 @@ limit | Specifies the number of results to page | Query | Number | FALSE | 1000
 startDate | Specifies the timestamp to list events after | Query | Date | FALSE |
 after | Specifies the pagination cursor for the next page of events | Query | String | FALSE |
 
-*Note: The cursor should treated as an opaque value and obtained through the next link relation. See [Pagination](../design_principles.md#pagination)*
+*Note: The cursor should treated as an opaque value and obtained through the next link relation. See [Pagination](../getting_started/design_principles.md#pagination)*
 
 ### Response Parameters
 
