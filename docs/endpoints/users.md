@@ -1,37 +1,43 @@
-# User
+# Overview
 
-The Okta User API provides operations for User Management. 
+The User API provides operations for user management.
 
-- [Create User](#create-user)
-	- [Create User without Credentials](#create-user-without-credentials)
-	- [Create User with Recovery Question](#create-user-with-recovery-question)
-	- [Create User with Password](#create-user-with-password)
-	- [Create User with Password & Recovery Question](#create-user-with-password--recovery-question)
-- [Get User](#get-user)
-	- [Get User with id](#get-user-with-id)
-	- [Get User with login](#get-user-with-login)
-	- [Get User with login shortname](#get-user-with-login-shortname)
-- [List Users](#list-users)
-	- [List Users with Search](#list-users-with-search)
-	- [List Users with Status (Filter)](#list-users-with-status-filter)
-- [Update User](#update-user)
-	- [Update Profile](#update-profile)
-	- [Update Password](#update-password)
-	- [Update Recovery Question & Answer](#update-recovery-question--answer)
-- Related Resources
+- [User Model](#user-model)
+	- [Metadata Attributes](#metadata-attributes)
+	- [Profile Object](#profile-object)
+	- [Credentials Object](#credentials-object)
+	- [Links Object](#links-object)
+- [User Operations](#user-operations)	
+	- [Create User](#create-user)
+		- [Create User without Credentials](#create-user-without-credentials)
+		- [Create User with Recovery Question](#create-user-with-recovery-question)
+		- [Create User with Password](#create-user-with-password)
+		- [Create User with Password & Recovery Question](#create-user-with-password--recovery-question)
+	- [Get User](#get-user)
+		- [Get User with id](#get-user-with-id)
+		- [Get User with login](#get-user-with-login)
+		- [Get User with login shortname](#get-user-with-login-shortname)
+	- [List Users](#list-users)
+		- [List Users with Search](#list-users-with-search)
+		- [List Users with Status (Filter)](#list-users-with-status-filter)
+	- [Update User](#update-user)
+		- [Update Profile](#update-profile)
+		- [Update Password](#update-password)
+		- [Update Recovery Question & Answer](#update-recovery-question--answer)
+- [Related Resources](#related-resources)
 	- [Get Assigned App Links](#get-assigned-app-links)
 	- [Get Member Groups](#get-member-groups)
-- Lifecycle Operations
+- [Lifecycle Operations](#lifecycle-operations)
 	- [Activate](#activate-user)
 	- [Deactivate](#deactivate-user)
 	- [Unlock](#unlock-user)
 	- [Reset Password](#reset-password)
-- Credential Operations
+- [Credential Operations](#credential-operations)
 	- [Forgot Password](#forgot-password)
 	- [Change Password](#change-password)
 	- [Change Recovery Question](#change-recovery-question)
 
-## User Model
+# User Model
 
 Content Type: application/json
 
@@ -40,7 +46,7 @@ Content Type: application/json
 - [Credentials Object](#credentials-object)
 - [Links Object](#links-object)
 
-### Example
+## Example
 
 ```json
 {
@@ -83,7 +89,7 @@ Content Type: application/json
 }
 ```
 
-### Metadata Attributes
+## Metadata Attributes
 The User model defines several ***read-only*** attributes:
 
 Attribute | Description | DataType | Nullable
@@ -102,7 +108,7 @@ transitioningToStatus | target status of an inprogress asynchronous status trans
 
 `statusChanged` and `lastLogin` timestamps will be missing for users created before *06/30/2013*.  They will be updated on next status change or login.
 
-### Profile Object
+## Profile Object
 Specifies standard and custom profile attributes for a user.
 
 ```json
@@ -119,7 +125,7 @@ Specifies standard and custom profile attributes for a user.
 }
 ```
 
-#### Standard Attributes
+### Standard Attributes
 All profiles have the following attributes:
 
 Attribute | DataType | MinLength | MaxLength | Nullable | Unique | Validation
@@ -130,10 +136,10 @@ firstName | String | 1 | 50	| FALSE	| FALSE	|
 lastName | String | 1 | 50	| FALSE	| FALSE	|
 mobilePhone | String |	0 |	100	| TRUE | FALSE	|
 
-#### Custom Attributes
+### Custom Attributes
 Custom attributes may be added to a user profile.  Custom attributes must be single-value (non-array) and have a data type of `Number`, `String`, `Boolean`, or `null`.
 
-### Credentials Object
+## Credentials Object
 Specifies credentials for a user.  Credential types and requirements vary depending on the operation and security policy of the organization.
 
 Attribute | DataType | MinLength | MaxLength | Nullable | Unique | Validation
@@ -155,7 +161,7 @@ recovery_question | [Recovery Question Object](#recovery-question-object) | | | 
 }
 ```
 
-#### Password Object
+### Password Object
 
 Specifies a password for a user.  A password value is a **write-only** property.  When a user has a valid password and a response object contains a password credential, then the Password Object will be a bare object without the ```value``` property defined (e.g. ```password: {}```) to indicate that a password value exists.
 
@@ -164,7 +170,7 @@ Attribute | DataType | MinLength | MaxLength | Nullable | Unique | Validation
 value | String | *Password Policy* | 40 | TRUE | FALSE | *Password Policy* 
 
 
-#### Recovery Question Object
+### Recovery Question Object
 
 Specifies a secret question and answer that is validated when a user forgets their password.  The answer property is **write-only**.
 
@@ -173,7 +179,7 @@ Attribute | DataType | MinLength | MaxLength | Nullable | Unique | Validation
 question | String | 1 | 100 | TRUE | FALSE |
 answer | String | 1 | 100 | TRUE | FALSE |
 
-### Links Object
+## Links Object
 
 Specifies link relations (See [Web Linking](http://tools.ietf.org/html/rfc5988)) available for the current status of a user.  The Links Object is used for dynamic discovery of related resources and lifecycle or credential operations.  The Links Object is **read-only**.
 
@@ -187,6 +193,8 @@ forgotPassword | [Resets a user's password](#forgot-password) by validating the 
 changePassword | [Changes a user's password](#change-password) validating the user's current password
 changeRecoveryQuestion | [Changes a user's recovery credential](#change-recovery-question) by validating the user's current password
 unlock | [Lifecycle operation](#unlock-user) to returns a user to **ACTIVE** status when their current status is **LOCKED_OUT** due to exceeding failed login attempts
+
+#User Operations
 
 ## Create User
 
@@ -513,6 +521,8 @@ curl -v -H "Authorization:SSWS yourtoken" \
 ```
 
 ### Get User with login
+
+#### Request
 
 ```sh
 curl -v -H "Authorization:SSWS yourtoken" \
@@ -1040,7 +1050,8 @@ curl -v -H "Authorization:SSWS yourtoken" \
         }
     }
 }
-```    
+```
+# Related Resources    
 
 ## Get Assigned App Links
 
@@ -1161,6 +1172,9 @@ curl -v -H "Authorization:SSWS yourtoken" \
   }
 ]
 ```
+
+# Lifecycle Operations
+
 ## Activate User
 
 #### POST /users/:id/lifecycle/activate
@@ -1295,6 +1309,8 @@ curl -v -H "Authorization:SSWS yourtoken" \
   "resetPasswordUrl": "https://your-domain.okta.com/reset_password/XE6wE17zmphl3KqAPFxO"
 }
 ```
+
+# Credential Operations
 	
 ## Forgot Password
 
