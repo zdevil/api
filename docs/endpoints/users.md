@@ -1221,7 +1221,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
 
 ## Deactivate User
 
-#### POST /users/:id/lifecycle/dectivate
+#### POST /users/:id/lifecycle/deactivate
 
 Deactivates a user.  This operation can only be performed on users that do not have a **DEPROVISIONED** `status`.  Deactivation of a user is an asynchronous operation.  The user will have the `transitioningToStatus` property with a value of **DEPROVISIONED** during deactivation to indicate that the user hasn't completed the asynchronous operation.  The user will have a `status` of **DEPROVISIONED** when the deactivation process is complete.
 
