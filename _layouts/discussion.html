@@ -1,0 +1,39 @@
+{% include header.html %}
+<div class="container">
+   <div class="side-container">
+      <div class="row row-offcanvas row-offcanvas-right"  id="f-wrapper"  style="background-color:white; min-height: 1200px;">
+         <div class="col-xs-10 col-md-10 col-md-offset-1">
+               <div id="section-{{count}}">
+                  <h1 style="margin-top:20px;">Okta Discussions</h1>
+               </div>
+               <p>Okta is an enterprise grade identity management service, built from the ground up in the cloud and delivered with an unwavering focus on customer success.</p>
+               <p>With Okta IT can manage access across any application, person or device. Whether the people are employees, partners or customers or the applications are in the cloud, on premises or on a mobile device, Okta helps IT become more secure, make people more productive, and maintain compliance.</p>
+               <p>The Okta identity management service provides directory services, single sign-on, strong authentication, provisioning, workflow, and built in reporting. Okta runs in the cloud on a secure, reliable, extensively audited platform that integrates deeply with on premises applications, directories, and identity management systems.</p>
+            </div>
+
+
+    <div class="col-xs-5 col-md-5 col-md-offset-4">
+         <form id="stackoverflow_form" action="http://stackoverflow.com/search" target="_blank" _lpchecked="1">
+            <div id="stackoverflow_search_cntr" class="icon_input mha mbl pbm">
+               <input type="hidden" name="tag" value="[okta]">
+               <input class="form-control input-lg" id="focusedInput" type="text" placeholder="Search" autocomplete="on" name="q">
+            </div>
+         </form>
+      </div>
+
+         <div class="col-xs-10 col-md-10 col-md-offset-1">
+            <h2>Latest questions</h2>
+         </div>
+         <div class="col-xs-10 col-md-10 col-md-offset-1">
+            <ul class="stackoverflow-feed pull-left" id="forum-question" data-limit="30"></ul>
+         </div>
+
+
+
+      </div>
+     
+      
+   </div>
+</div>
+
+{% include footer.html %}

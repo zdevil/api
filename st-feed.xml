@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:re="http://purl.org/atompub/rank/1.0">
+   <title type="text">Recent Questions - Stack Overflow</title>
+   <link rel="self" href="http://stackoverflow.com/feeds" type="application/atom+xml" />
+   <link rel="alternate" href="http://stackoverflow.com/questions" type="text/html" />
+   <subtitle>most recent 30 from stackoverflow.com</subtitle>
+   <updated>2013-09-12T19:57:38Z</updated>
+   <id>http://stackoverflow.com/feeds</id>
+   <creativeCommons:license>http://www.creativecommons.org/licenses/by-sa/3.0/rdf</creativeCommons:license>
+   <entry>
+      <id>http://stackoverflow.com/q/18773246</id>
+      <re:rank scheme="http://stackoverflow.com">0</re:rank>
+      <title type="text">Best practices and tutorials for ios authentication</title>
+      <category scheme="http://stackoverflow.com/feeds/tags" term="bash" />
+      <author>
+         <name>ruckc</name>
+         <uri>http://stackoverflow.com/users/2035417</uri>
+      </author>
+      <link rel="alternate" href="http://stackoverflow.com/questions/18041035/best-practices-and-tutorials-for-ios-authentication/18041322#18041322" />
+      <published>2013-09-12T19:56:06Z</published>
+      <updated>2013-09-12T19:56:06Z</updated>
+      <summary type="html">know what that means for their future. Okta is another. Mozilla Persona is quite promising, but may not yet be ready for the real world. There is an open-source kit for iOS named persona-ios. Read …</summary>
+   </entry>
+   <entry>
+      <id>http://stackoverflow.com/q/18773246</id>
+      <re:rank scheme="http://stackoverflow.com">0</re:rank>
+      <title type="text">Authenticate using SAML and Okta from MVC</title>
+      <category scheme="http://stackoverflow.com/feeds/tags" term="bash" />
+      <author>
+         <name>ruckc</name>
+         <uri>http://stackoverflow.com/users/2035417</uri>
+      </author>
+      <link rel="alternate" href="http://stackoverflow.com/questions/15603265/authenticate-using-saml-and-okta-from-mvc" />
+      <published>2013-09-12T19:56:06Z</published>
+      <updated>2013-09-12T19:56:06Z</updated>
+      <summary type="html">I need to replace windows auth in an intranet site with SAML against Okta. I'm having very little luck finding an example that does not require a PhD to understand. Can anyone point me to a dummies guide or some samples for this? Thanks …</summary>
+   </entry>
+    <entry>
+      <id>http://stackoverflow.com/q/18773246</id>
+      <re:rank scheme="http://stackoverflow.com">0</re:rank>
+      <title type="text">Identity, WIF, SAML and a 3rd party IdP</title>
+      <category scheme="http://stackoverflow.com/feeds/tags" term="bash" />
+      <author>
+         <name>ruckc</name>
+         <uri>http://stackoverflow.com/users/2035417</uri>
+      </author>
+      <link rel="alternate" href="http://stackoverflow.com/questions/15603265/authenticate-using-saml-and-okta-from-mvc" />
+      <published>2013-09-12T19:56:06Z</published>
+      <updated>2013-09-12T19:56:06Z</updated>
+      <summary type="html">Is SAML the only option available on Okta? Can't you enable WS-Federation? or OAuth? There're prebuilt libraries for both on the .NET world (WIF and DotNetOpenAuth). That would be the simplest …</summary>
+   </entry>
+</feed>
