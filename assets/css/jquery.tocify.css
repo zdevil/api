@@ -65,20 +65,21 @@
 .tocify-extend-page{
     display:none;
 }
-.active > .sub_header_arrow{
+.active > a > .sub_header_arrow{
     border: 0;
     width: 0;
     height: 0;
     display: block;
     position: absolute;
     top: 9px;
-    left: 35px;
+    left: 32px;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
     
     border-top: 4px solid #fff;
     z-index:10;
 }
+
 ul.tocify-subheader > .tocify-item > a{
     color: #428bca !important;
 }

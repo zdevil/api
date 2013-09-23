@@ -395,7 +395,8 @@ follow these Link header values instead of constructing your own URLs.</p>
     	if($(this).has("ul li").length)
 	{
 		//$(this).children().wrapInner("<span class='sub_header_arrow'></span>");
-		$(this).find('a').prepend("<span class='sub_header_arrow'></span>");
+		// $(this).find('a').prepend("<span class='sub_header_arrow'></span>");
+                         $(this).find('a').prepend("<span class='sub_header_arrow'></span>");
 		console.log($(this).find('a').html());
 		// console.log("\n");
             }

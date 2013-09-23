@@ -285,9 +285,9 @@ table tr {
   background-color: #fff;
 }
 .side-container{
-  padding-left:120px;
+  /*padding-left:120px;
   padding-right: 90px;
-  background-color: #efefef;
+  background-color: #efefef;*/
 }
 
 ul.navbar-right {
@@ -512,7 +512,7 @@ margin-top: 15px;
   width: 270px;
   z-index: 10;
   top: 60px;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 #sidebar ul {
   list-style: none;

@@ -480,7 +480,7 @@
             if(currentTagName < previousTagName) {
 
                 // Selects the last unordered list HTML found within the HTML element calling the plugin
-                self.element.find(subheaderClass + "[data-tag=" + currentTagName + "]").last().append(self._nestElements($(this), index, "1"));
+                self.element.find(subheaderClass + "[data-tag=" + currentTagName + "]").last().append(self._nestElements($(this), index));
 
             }
 
@@ -506,7 +506,7 @@
                 })).next(subheaderClass).
                 
                 // Appends a list item HTML element to the last unordered list HTML element found within the HTML element calling the plugin
-                append(self._nestElements($(this), index, "1"));
+                append(self._nestElements($(this), index));
             }
 
         },

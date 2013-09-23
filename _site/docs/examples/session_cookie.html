@@ -304,7 +304,8 @@ token to get a session cookie.</p>
     	if($(this).has("ul li").length)
 	{
 		//$(this).children().wrapInner("<span class='sub_header_arrow'></span>");
-		$(this).find('a').prepend("<span class='sub_header_arrow'></span>");
+		// $(this).find('a').prepend("<span class='sub_header_arrow'></span>");
+                         $(this).find('a').prepend("<span class='sub_header_arrow'></span>");
 		console.log($(this).find('a').html());
 		// console.log("\n");
             }
