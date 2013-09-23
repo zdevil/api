@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="shortcut icon" href="../../assets/ico/favicon.png">
-        <title>Okta Developers</title>
-        
-        
-        <!-- Bootstrap core CSS -->
-        <!-- <link href="/assets/dist/css/bootstrap.css" rel="stylesheet">
-        <link href="/assets/css/main.css" rel="stylesheet"> -->
-         <link href="/assets/dist/css/bootstrap.css" rel="stylesheet">
-         <link href="/assets/css/jquery.tocify.css" rel="stylesheet">
-        <link href="/assets/css/main.css" rel="stylesheet">
-        
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+    <title>Okta Developers</title>
+    
+    
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/css/jquery.tocify.css" rel="stylesheet">
+    <link href="/assets/css/main.css" rel="stylesheet">
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
         <script src="../../assets/js/html5shiv.js"></script>
         <script src="../../assets/js/respond.min.js"></script>
@@ -29,14 +27,41 @@
                 <div class="container okta-navbar">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="../"></a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             
                             
                             
@@ -66,6 +91,8 @@
                             
                             
                             
+                            
+                            
                             <li class="active"><a href="/sdks/index.html" data-num="2" class="active">SDKs</a></li>
                             
                             
@@ -78,54 +105,21 @@
                             
                             
                             
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             <li><a href="/forum/index.html" data-num="3">Discussions</a></li>
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
                             
                             
                             
@@ -172,6 +166,50 @@
 				<ul>
 					<li class="h1-toc-depth"><a>Content test</a></li>
 
+								
+								
+								<li class="h2-toc-depth">
+									<a href="/docs/endpoints/users.html" data-position="leftsidebar">Endpoints - Users</a>
+								</li>
+								
+								
+								
+								<li class="h2-toc-depth">
+									<a href="/docs/examples/session_cookie.html" data-position="">Session Cookie</a>
+								</li>
+								
+								
+								
+								<li class="h2-toc-depth">
+									<a href="/docs/getting_started/design_principles.html" data-position="">Design Principles</a>
+								</li>
+								
+								
+								
+								<li class="h2-toc-depth">
+									<a href="/docs/getting_started/error_codes.html" data-position="">Error Codes</a>
+								</li>
+								
+								
+								
+								<li class="h2-toc-depth">
+									<a href="/docs/getting_started/getting_a_token.html" data-position="">Getting A Token</a>
+								</li>
+								
+								
+								
+								<li class="h2-toc-depth">
+									<a href="/docs/sdks/getting_started.html" data-position="">Getting Started</a>
+								</li>
+								
+								
+								
+								
+								
+								
+								
+								
+								
 								
 
 					<li class="h1-toc-depth"><a>Get Started</a></li>
@@ -223,17 +261,8 @@ Okta Cloud Connect is free. Designed to seamlessly connect a single critical app
 </div>
 
 
- </div>
-<!-- <div id="footer">
-    <div class="row sub-footer">
-        <div class="container">
-            <div class="col-xs-6 col-md-6">
-                <p class="copyright">© 2013 Okta, Inc.  All Rights Reserved.  Various trademarks held by their respective owners.</p>
-                <p></p>
-            </div>
-        </div>
-    </div>
-</div> -->
+ <!-- Closing wrapper div -->
+</div>
 </body>
 <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -250,4 +279,24 @@ Okta Cloud Connect is free. Designed to seamlessly connect a single critical app
 
 <script src="../assets/js/jquery.tocify.js"></script>
 <script src="../assets/js/function.js"></script>
+<script>
+
+ $(window).load(function() {
+     // $('#sidebar').filter(function(){
+     //      return $(this).child().is('ul')
+     //  }).addClass('sub_header_arrow');
+
+
+     $("#sidebar ul").each(function()
+     {
+    	if($(this).has("ul li").length)
+	{
+		//$(this).children().wrapInner("<span class='sub_header_arrow'></span>");
+		$(this).find('a').prepend("<span class='sub_header_arrow'></span>");
+		console.log($(this).find('a').html());
+		// console.log("\n");
+            }
+      })
+});
+</script>
  

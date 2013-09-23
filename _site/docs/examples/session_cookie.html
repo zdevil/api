@@ -31,7 +31,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href=""></a>
+                        <a class="navbar-brand" href="../../"></a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
@@ -163,8 +163,8 @@
 	<div class="side-container">
 		<div class="row row-offcanvas row-offcanvas-right" id="f-wrapper">
 			<div class="col-xs-3 col-md-3" id="sidebar-sdks">
-				<ul id="menu-page" class="menu">
-					<li class="h1-toc-depth"><a >Getting Started</a></li>
+				<ul>
+					<li class="h1-toc-depth"><a>Content test</a></li>
 
 								
 								
@@ -211,51 +211,62 @@
 								
 								
 								
+
+					<li class="h1-toc-depth"><a>Get Started</a></li>
+
+							<li class="h2-toc-depth"><a href="/">Get Started with Okta API</a></li>
+							<li class="h2-toc-depth"><a href="../forum/">Developer Account FAQ</a></li>
+							<li class="h2-toc-depth"><a>Branding Guidelines</a></li>
+
+					<li class="h1-toc-depth"><a>SDKs</a>
+						
+					</li>
+
+					<li class="h1-toc-depth"><a>Tutorials</a>
+						
+					</li>
 				</ul>
 			</div>
 			<div class="col-xs-9 col-md-9" style="background-color:white; border-left: 1px solid #ccc; min-height: 800px;">
 				<div style="margin-left:2%;">
-				
-				<h1 id="toc_0">Okta API Home Page</h1>
+					<div id="section-">
+						<h1 style="margin-top:20px;">Okta SDKs</h1>
+					</div>
+					
+					<h1 id="toc_0">Retrieving a session cookie with a hidden image</h1>
 
-<h2 id="toc_1">(placeholder)</h2>
+<p>The session creation endpoint allows you to create a session and optionally include a 
+one-time token URL in the response which will allow you to get a cookie for that session
+ in the browser. (See the <a href="/docs/endpoints/sessions.md">Sessions documentation</a> for more 
+ information on this endpoint.)</p>
 
-<p>This is a markdown page home.md under _includes/</p>
+<p>Request:
+POST <a href="https://your-subdomain.okta.com/api/v1/sessions?additionalFields=cookieTokenUrl">https://your-subdomain.okta.com/api/v1/sessions?additionalFields=cookieTokenUrl</a></p>
+<div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;username&quot;</span> <span class="p">:</span> <span class="s2">&quot;jsmith@mycompany.com&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;password&quot;</span> <span class="p">:</span> <span class="s2">&quot;mypassword&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Response:</p>
+<div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;000kYk6cDF7R02z4PxV5mhL4g&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;userId&quot;</span><span class="p">:</span> <span class="s2">&quot;00u9apFCRAIKHVPZLGXT&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;mfaActive&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;cookieTokenUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;https://your-subdomain.okta.com/login/sessionCookie?token=009Db9G6Sc8o8VfE__SlGj4FPxaG63Wm89TpJnaDF6&quot;</span>
+<span class="p">}</span> 
+</code></pre></div>
+<p>This URL can then be embedded in an image tag:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://your-subdomain.okta.com/login/sessionCookie?token=009Db9G6Sc8o8VfE__SlGj4FPxaG63Wm89TpJnaDF6&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+<p>When the page containing the tag is loaded, the token in the request will be used to 
+initiate the user&#39;s session, and a session cookie will be set in the browser. The image 
+that renders is a 1x1 transparent image. After the page has loaded the user will have an 
+active session with Okta and will be able to SSO into their applications. The token is a
+one-time token, so successive page loads will have no impact on the user&#39;s session. If
+the user logs out of Okta after using the token, they will not be able to reuse that same 
+token to get a session cookie.</p>
 
-<p>This is the starting point for documentation on the Okta API. If you are new, take a look at the getting started section below.</p>
-
-<h2 id="toc_2">Contents</h2>
-
-<h3 id="toc_3">Getting Started</h3>
-
-<ul>
-<li><a href="getting_started/getting_a_token.md">Getting a token</a></li>
-<li><a href="getting_started/design_principles.md">Design principles</a></li>
-<li><a href="getting_started/error_codes.md">Error Codes</a></li>
-</ul>
-
-<h3 id="toc_4">Endpoints</h3>
-
-<ul>
-<li><a href="endpoints/users.md">Users</a></li>
-<li><a href="endpoints/groups.md">Groups</a></li>
-<li><a href="endpoints/sessions.md">Sessions</a></li>
-<li><a href="endpoints/tokens.md">Tokens</a></li>
-<li><a href="endpoints/events.md">Events</a></li>
-</ul>
-
-<h3 id="toc_5">Examples</h3>
-
-<ul>
-<li><a href="examples/session_cookie.md">Retrieving a session cookie with a hidden image</a></li>
-</ul>
-
-<h3 id="toc_6">Okta Identity Management</h3>
-
-<p>Workday-Driven Identity Lifecycle Management with Okta Identity Management
-Okta automates user management into all leading cloud and web applications, and this process typically starts from a corporate directory like Active Directory. Now, with Workday-driven identity lifecycle management those provisioning and deprovisioning processes can be driven automatically from Workday via Okta identity management. And unlike integrations between HCM and Identity Management systems in this past, this integration is productized, robust, and cost effective to implement and maintain over time.</p>
-
-			</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -270,16 +281,16 @@ Okta automates user management into all leading cloud and web applications, and 
 <!-- Placed at the end of the document so the pages load faster -->
 <script type="text/javascript" src="//use.typekit.net/pls8pog.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<script src="assets/js/jquery.js"></script>
-<script src="assets/dist/js/bootstrap.min.js"></script>
-<!-- <script src="assets/js/jquery.toc.min.js"></script>
-<script src="assets/js/tofc.js"></script>
-<script src="assets/js/jquery.fixedscroll.min.js"></script>
-<script src="assets/js/jquery-scrolltofixed-min.js"></script> -->
-<script src="assets/js/jquery-ui-1.10.3.custom.js"></script>
+<script src="../../assets/js/jquery.js"></script>
+<script src="../../assets/dist/js/bootstrap.min.js"></script>
+<!-- <script src="../../assets/js/jquery.toc.min.js"></script>
+<script src="../../assets/js/tofc.js"></script>
+<script src="../../assets/js/jquery.fixedscroll.min.js"></script>
+<script src="../../assets/js/jquery-scrolltofixed-min.js"></script> -->
+<script src="../../assets/js/jquery-ui-1.10.3.custom.js"></script>
 
-<script src="assets/js/jquery.tocify.js"></script>
-<script src="assets/js/function.js"></script>
+<script src="../../assets/js/jquery.tocify.js"></script>
+<script src="../../assets/js/function.js"></script>
 <script>
 
  $(window).load(function() {

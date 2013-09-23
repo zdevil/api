@@ -1,10 +1,12 @@
 ---
-layout: post
+layout: sdks
 title: Endpoints - Users
 category : Endpoints
 tagline: "Endpoints - Users"
 tags : [endpoints, users]
 icon: "glyphicon glyphicon-user"
+position: leftsidebar
+priority: 4
 ---
 
 # Overview

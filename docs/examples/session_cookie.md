@@ -1,10 +1,11 @@
 ---
-layout: post
+layout: sdks
 title: Session Cookie
 category : Examples
 tagline: "Session Cookie"
 tags : [Session, Cookie, examples]
 icon: "glyphicon glyphicon-user"
+priority: 3
 ---
 
 # Retrieving a session cookie with a hidden image

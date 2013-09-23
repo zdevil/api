@@ -1,5 +1,8 @@
-Okta API Documentation
+Okta API Home Page
 ======================
+
+## (placeholder)
+This is a markdown page home.md under _includes/
 
 This is the starting point for documentation on the Okta API. If you are new, take a look at the getting started section below.
 

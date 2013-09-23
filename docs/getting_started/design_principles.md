@@ -1,9 +1,10 @@
 ---
-layout: post
+layout: sdks
 title: Design Principles
 category : Getting Started
 tagline: "Design Principles"
 tags : [design, principles]
+priority: 2
 ---
 
 

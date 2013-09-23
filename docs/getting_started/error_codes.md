@@ -1,10 +1,11 @@
 ---
-layout: post
+layout: sdks
 title: Error Codes
 category : Getting Started
 tagline: "Error Codes"
 tags : [getting started, error, codes]
 icon: "glyphicon glyphicon-user"
+priority: 5
 ---
 
 # Error Codes

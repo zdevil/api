@@ -143,6 +143,9 @@ body {
   .bs-footer p {
     margin-bottom: 0;
   }
+  #sidebar{
+    position:absolute;
+  }
 }
 
 

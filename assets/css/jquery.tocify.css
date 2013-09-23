@@ -9,12 +9,12 @@
     margin: 0;
     padding: 0;
     border: none;
-    line-height: 20px;
+    /*line-height: 20px;*/
 }
 
 /* Top level header elements */
 .tocify-header {
-    text-indent: 10px;
+     margin-left: 10px;
     color: #000 !important;
     font-weight: 700;
 }
@@ -26,7 +26,7 @@
 
 /* Top level subheader elements.  These are the first nested items underneath a header element. */
 .tocify-subheader {
-    text-indent: 20px;
+     margin-left: 10px !important;
     display: none;
 }
 
@@ -37,12 +37,12 @@
 
 /* Further indents second level subheader elements. */
 .tocify-subheader .tocify-subheader {
-    text-indent: 30px;
+     margin-left: 20px;
 }
 
 /* Further indents third level subheader elements. You can continue this pattern if you have more nested elements. */
 .tocify-subheader .tocify-subheader .tocify-subheader {
-    text-indent: 40px;
+    margin-left: 10px;
 }
 
 /* Twitter Bootstrap Override Style */
@@ -52,15 +52,33 @@
 
 /* Twitter Bootstrap Override Style */
 .nav-list > li > a {
-    padding: 5px;
+    padding: 3px;
+    margin-right: 20px;
 }
 .tocify-item{
-    margin-left: -30px !important;
-margin-right: -30px !important;
+    margin-left: -35px !important;
+    margin-right: -35px !important;
 }
 .tocify-item a{
     padding-left: 45px !important;
 }
 .tocify-extend-page{
     display:none;
+}
+.active > .sub_header_arrow{
+    border: 0;
+    width: 0;
+    height: 0;
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 35px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    
+    border-top: 4px solid #fff;
+    z-index:10;
+}
+ul.tocify-subheader > .tocify-item > a{
+    color: #428bca !important;
 }

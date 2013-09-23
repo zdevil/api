@@ -1,14 +1,5 @@
+<!-- Closing wrapper div -->
 </div>
-<!-- <div id="footer">
-    <div class="row sub-footer">
-        <div class="container">
-            <div class="col-xs-6 col-md-6">
-                <p class="copyright">© 2013 Okta, Inc.  All Rights Reserved.  Various trademarks held by their respective owners.</p>
-                <p></p>
-            </div>
-        </div>
-    </div>
-</div> -->
 </body>
 <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -25,3 +16,23 @@
 
 <script src="{{ relative }}assets/js/jquery.tocify.js"></script>
 <script src="{{ relative }}assets/js/function.js"></script>
+<script>
+
+ $(window).load(function() {
+     // $('#sidebar').filter(function(){
+     //      return $(this).child().is('ul')
+     //  }).addClass('sub_header_arrow');
+
+
+     $("#sidebar ul").each(function()
+     {
+    	if($(this).has("ul li").length)
+	{
+		//$(this).children().wrapInner("<span class='sub_header_arrow'></span>");
+		$(this).find('a').prepend("<span class='sub_header_arrow'></span>");
+		console.log($(this).find('a').html());
+		// console.log("\n");
+            }
+      })
+});
+</script>

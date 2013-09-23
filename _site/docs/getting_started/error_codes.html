@@ -31,7 +31,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href=""></a>
+                        <a class="navbar-brand" href="../../"></a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
@@ -163,8 +163,8 @@
 	<div class="side-container">
 		<div class="row row-offcanvas row-offcanvas-right" id="f-wrapper">
 			<div class="col-xs-3 col-md-3" id="sidebar-sdks">
-				<ul id="menu-page" class="menu">
-					<li class="h1-toc-depth"><a >Getting Started</a></li>
+				<ul>
+					<li class="h1-toc-depth"><a>Content test</a></li>
 
 								
 								
@@ -211,51 +211,129 @@
 								
 								
 								
+
+					<li class="h1-toc-depth"><a>Get Started</a></li>
+
+							<li class="h2-toc-depth"><a href="/">Get Started with Okta API</a></li>
+							<li class="h2-toc-depth"><a href="../forum/">Developer Account FAQ</a></li>
+							<li class="h2-toc-depth"><a>Branding Guidelines</a></li>
+
+					<li class="h1-toc-depth"><a>SDKs</a>
+						
+					</li>
+
+					<li class="h1-toc-depth"><a>Tutorials</a>
+						
+					</li>
 				</ul>
 			</div>
 			<div class="col-xs-9 col-md-9" style="background-color:white; border-left: 1px solid #ccc; min-height: 800px;">
 				<div style="margin-left:2%;">
-				
-				<h1 id="toc_0">Okta API Home Page</h1>
+					<div id="section-">
+						<h1 style="margin-top:20px;">Okta SDKs</h1>
+					</div>
+					
+					<h1 id="toc_0">Error Codes</h1>
 
-<h2 id="toc_1">(placeholder)</h2>
+<p>This document provides further information about the errors that the Okta API returns.  Listed by error code.</p>
 
-<p>This is a markdown page home.md under _includes/</p>
+<h4 id="toc_1">E0000001</h4>
 
-<p>This is the starting point for documentation on the Okta API. If you are new, take a look at the getting started section below.</p>
+<p>API validation failed</p>
 
-<h2 id="toc_2">Contents</h2>
+<h4 id="toc_2">E0000002</h4>
 
-<h3 id="toc_3">Getting Started</h3>
+<p>The request was not valid</p>
 
-<ul>
-<li><a href="getting_started/getting_a_token.md">Getting a token</a></li>
-<li><a href="getting_started/design_principles.md">Design principles</a></li>
-<li><a href="getting_started/error_codes.md">Error Codes</a></li>
-</ul>
+<h4 id="toc_3">E0000003</h4>
 
-<h3 id="toc_4">Endpoints</h3>
+<p>The request body was not well-formed</p>
 
-<ul>
-<li><a href="endpoints/users.md">Users</a></li>
-<li><a href="endpoints/groups.md">Groups</a></li>
-<li><a href="endpoints/sessions.md">Sessions</a></li>
-<li><a href="endpoints/tokens.md">Tokens</a></li>
-<li><a href="endpoints/events.md">Events</a></li>
-</ul>
+<h4 id="toc_4">E0000004</h4>
 
-<h3 id="toc_5">Examples</h3>
+<p>Authentication failed</p>
 
-<ul>
-<li><a href="examples/session_cookie.md">Retrieving a session cookie with a hidden image</a></li>
-</ul>
+<h4 id="toc_5">E0000005</h4>
 
-<h3 id="toc_6">Okta Identity Management</h3>
+<p>Invalid session</p>
 
-<p>Workday-Driven Identity Lifecycle Management with Okta Identity Management
-Okta automates user management into all leading cloud and web applications, and this process typically starts from a corporate directory like Active Directory. Now, with Workday-driven identity lifecycle management those provisioning and deprovisioning processes can be driven automatically from Workday via Okta identity management. And unlike integrations between HCM and Identity Management systems in this past, this integration is productized, robust, and cost effective to implement and maintain over time.</p>
+<h4 id="toc_6">E0000006</h4>
 
-			</div>
+<p>You do not have permission to perform the requested action</p>
+
+<h4 id="toc_7">E0000007</h4>
+
+<p>The requested resource was not found</p>
+
+<h4 id="toc_8">E0000008</h4>
+
+<p>The requested path was not found</p>
+
+<h4 id="toc_9">E0000009</h4>
+
+<p>Internal server error</p>
+
+<h4 id="toc_10">E0000010</h4>
+
+<p>Service is in read only mode</p>
+
+<h4 id="toc_11">E0000011</h4>
+
+<p>Invalid token provided</p>
+
+<h4 id="toc_12">E0000012</h4>
+
+<p>Unsupported media type</p>
+
+<h4 id="toc_13">E0000013</h4>
+
+<p>Invalid client app id. A client app is a third party application that queries the Okta API.  Each client app must use its id for certain operations, such as requesting a token.  Contact Okta to receive a client app id for your particular client app.</p>
+
+<h4 id="toc_14">E0000014</h4>
+
+<p>Update of credentials failed</p>
+
+<h4 id="toc_15">E0000015</h4>
+
+<p>You do not have permission to access the feature you are requesting</p>
+
+<h4 id="toc_16">E0000016</h4>
+
+<p>Activation failed because the user is already active</p>
+
+<h4 id="toc_17">E0000017</h4>
+
+<p>Password reset failed</p>
+
+<h4 id="toc_18">E0000018</h4>
+
+<p>Bad request.  Accept and/or Content-Type headers are likely not set.</p>
+
+<h4 id="toc_19">E0000019</h4>
+
+<p>Bad request.  Accept and/or Content-Type headers likely do not match supported values.</p>
+
+<h4 id="toc_20">E0000020</h4>
+
+<p>Bad request.</p>
+
+<h4 id="toc_21">E0000021</h4>
+
+<p>Bad request.  Accept and/or Content-Type headers likely do not match supported values.</p>
+
+<h4 id="toc_22">E0000022</h4>
+
+<p>The endpoint does not support the provided HTTP method</p>
+
+<h4 id="toc_23">E0000023</h4>
+
+<p>Operation failed because user profile is mastered under another system</p>
+
+<h4 id="toc_24">E0000026</h4>
+
+<p>This endpoint has been deprecated.</p>
+
+				</div>
 			</div>
 		</div>
 	</div>
@@ -270,16 +348,16 @@ Okta automates user management into all leading cloud and web applications, and 
 <!-- Placed at the end of the document so the pages load faster -->
 <script type="text/javascript" src="//use.typekit.net/pls8pog.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<script src="assets/js/jquery.js"></script>
-<script src="assets/dist/js/bootstrap.min.js"></script>
-<!-- <script src="assets/js/jquery.toc.min.js"></script>
-<script src="assets/js/tofc.js"></script>
-<script src="assets/js/jquery.fixedscroll.min.js"></script>
-<script src="assets/js/jquery-scrolltofixed-min.js"></script> -->
-<script src="assets/js/jquery-ui-1.10.3.custom.js"></script>
+<script src="../../assets/js/jquery.js"></script>
+<script src="../../assets/dist/js/bootstrap.min.js"></script>
+<!-- <script src="../../assets/js/jquery.toc.min.js"></script>
+<script src="../../assets/js/tofc.js"></script>
+<script src="../../assets/js/jquery.fixedscroll.min.js"></script>
+<script src="../../assets/js/jquery-scrolltofixed-min.js"></script> -->
+<script src="../../assets/js/jquery-ui-1.10.3.custom.js"></script>
 
-<script src="assets/js/jquery.tocify.js"></script>
-<script src="assets/js/function.js"></script>
+<script src="../../assets/js/jquery.tocify.js"></script>
+<script src="../../assets/js/function.js"></script>
 <script>
 
  $(window).load(function() {

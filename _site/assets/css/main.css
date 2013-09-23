@@ -257,8 +257,10 @@ pre .nt{
   margin-bottom: 45px !important;
 }
 div.container{
-  max-width: 1296px;
-  width: 1296px;
+  max-width: 1110px;
+}
+.navbar > .container .navbar-brand {
+margin-left: -30px;
 }
 table{
   width: 100%;
@@ -504,10 +506,10 @@ margin-top: 15px;
   font-size: 14px;
   word-wrap: break-word;
   position:fixed;
-  overflow-y: scroll;
+  overflow: hidden;
   height: 85%;
   bottom: 20px;
-  width: 263px;
+  width: 270px;
   z-index: 10;
   top: 60px;
   margin-top: 20px;
@@ -559,7 +561,7 @@ margin-top: 15px;
 }
 
 div.okta-navbar{
-  width: 1040px;
+  max-width: 1080px;
 }
 div.navbar-collapse .navbar-nav.navbar-right:last-child{
   margin-right: -25px;
@@ -610,6 +612,45 @@ background-color: #f9f9f9;
 .tocify-subheader li{
   color: red;
 }
+
+.sub_header_arrow {
+width: 0;
+height: 0;
+display: block;
+position: absolute;
+top: 8px;
+left: 35px;
+border-top: 4px solid transparent;
+border-left: 4px solid #1a74ba;
+border-bottom: 4px solid transparent;
+cursor: pointer
+}
+div.navbar-default .navbar-collapse, .navbar-default .navbar-for{
+  border-color:transparent;
+}
+
+
+@media(max-width:468px){
+  #sidebar{
+    width: auto;
+    position:relative;
+    top: 20px;
+    padding-bottom:20px;
+  }
+}
+
+@media(max-width:1120px){
+  #sidebar{
+    width: auto;
+    position:relative;
+    top: 20px;
+    padding-bottom:20px;
+  }
+}
+@media(min-width:992px){}
+
+
+
 /*#sidebar .sidebar-active {
   background: #336699;
   box-shadow: inset -5px 0px 10px -5px #000;

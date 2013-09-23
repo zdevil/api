@@ -183,7 +183,6 @@
 
                 // Once all animations on the page are complete, this callback function will be called
                 $("html, body").promise().done(function() {
-
                     setTimeout(function() {
 
                         self.extendPageScroll = false;
@@ -270,6 +269,7 @@
 
                             //If the element matches the ignoreSelector then we skip it
                             if($(this).is(ignoreSelector)) {
+
                                 return;
                             }
 
@@ -349,7 +349,7 @@
         // _nestElements
         // -------------
         //      Helps create the table of contents list by appending nested list items
-        _nestElements: function(self, index) {
+        _nestElements: function(self, index, has_parent) {
 
             var arr, item, hashValue;
 
@@ -376,7 +376,7 @@
             }
 
             hashValue = this._generateHashValue(arr, self, index);
-
+            // span = $('<span class="caret"></span>');
             // Appends a list item HTML element to the last unordered list HTML element found within the HTML element calling the plugin
             item = $("<li/>", {
 
@@ -385,12 +385,22 @@
 
                 "data-unique": hashValue
 
-            }).append($("<a/>", {
+            });
+
+            if (has_parent)
+            {
+                
+             // item.append($("<span/>", {
+
+             //        "class": 'sub_header_arrow'
+
+             //    }));
+         }
+            item.append($("<a/>", {
 
                 "text": self.text()
 
             }));
-
             // Adds an HTML anchor tag before the currently traversed HTML element
             self.before($("<div/>", {
 
@@ -452,14 +462,14 @@
         // ---------------
         //      Helps create the table of contents list by appending subheader elements
 
-        _appendSubheaders: function(self, ul) {
+        _appendSubheaders: function(self, ul, has_parent) {
 
             // The current element index
             var index = $(this).index(self.options.selectors),
 
                 // Finds the previous header DOM element
                 previousHeader = $(self.options.selectors).eq(index - 1),
-
+             
                 currentTagName = +$(this).prop("tagName").charAt(1),
 
                 previousTagName = +previousHeader.prop("tagName").charAt(1),
@@ -470,14 +480,14 @@
             if(currentTagName < previousTagName) {
 
                 // Selects the last unordered list HTML found within the HTML element calling the plugin
-                self.element.find(subheaderClass + "[data-tag=" + currentTagName + "]").last().append(self._nestElements($(this), index));
+                self.element.find(subheaderClass + "[data-tag=" + currentTagName + "]").last().append(self._nestElements($(this), index, "1"));
 
             }
 
             // If the current header DOM element is the same type of header(eg. h4) as the previous header DOM element
             else if(currentTagName === previousTagName) {
 
-                ul.find(itemClass).last().after(self._nestElements($(this), index));
+                ul.find(itemClass).last().after(self._nestElements($(this), index, has_parent));
 
             }
 
@@ -494,9 +504,9 @@
                     "data-tag": currentTagName
 
                 })).next(subheaderClass).
-
+                
                 // Appends a list item HTML element to the last unordered list HTML element found within the HTML element calling the plugin
-                append(self._nestElements($(this), index));
+                append(self._nestElements($(this), index, "1"));
             }
 
         },
@@ -913,7 +923,6 @@
                 this.hoverClass = tocHoverClassName;
 
             }
-
             //Maintains chainability
             return this;
 
