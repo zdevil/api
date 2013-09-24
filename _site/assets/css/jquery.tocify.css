@@ -55,10 +55,10 @@
     padding: 3px;
     margin-right: 20px;
 }
-.tocify-item{
+/*.tocify-item{
     margin-left: -35px !important;
     margin-right: -35px !important;
-}
+}*/
 .tocify-item a{
     padding-left: 45px !important;
 }

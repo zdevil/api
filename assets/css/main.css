@@ -494,10 +494,11 @@ Footer
   overflow: hidden;
   height: 85%;
   bottom: 20px;
-  width: 270px;
+  width: 269px;
   z-index: 10;
   top: 60px;
   margin-top: 40px;
+  padding: 0px;
 }
 #sidebar ul {
   list-style: none;
@@ -509,20 +510,40 @@ Footer
 }
 
 
-#sidebar ul li.active a{
+#sidebar ul li.active{
  background-image: url(../img/bg.jpg);
  color: #fff !important;
+ margin-left: -45px;
+ margin-right: -45px;
 }
 
-.nav > li > a:hover, .nav > li > a:focus{
+#sidebar ul li.active a{
+  margin-left: 45px;
+  color: #fff !important;
+  margin-right: 55px;
+}
+
+.nav > .tocify-item > a:hover, .nav > li.tocify-item:focus{
   background-color: transparent;
   color: #fff !important;
 }
 
-.nav > li > a:hover, .nav > li > a:hover{
+.nav > .tocify-item > a:hover, .nav > li.tocify-item:hover{
   background-image: url(../img/bg.jpg);
   color: #fff !important;
+   margin-left: -35px;
+    margin-right: -35px;
 }
+
+.nav > .tocify-item > a:hover, .nav > li a:hover{
+  color: #fff !important;
+}
+
+.nav > .tocify-item > a:hover, .nav > li a:focus{
+   margin-left: 35px;
+    margin-right: 45px;
+}
+
 
 .active a{
   color: #fff !important;
@@ -551,6 +572,7 @@ div.okta-navbar{
 div.navbar-collapse .navbar-nav.navbar-right:last-child{
   margin-right: -25px;
 }
+
 .secondary-page{
   background-color: #fff;
 }
@@ -593,11 +615,6 @@ div.navbar-collapse .navbar-nav.navbar-right:last-child{
   color: #000 !important;
 }
 
-
-.tocify-subheader li{
-  color: red;
-}
-
 .sub_header_arrow {
   width: 0;
   height: 0;
@@ -634,3 +651,7 @@ div.navbar-default .navbar-collapse, .navbar-default .navbar-for{
   }
 }
 @media(min-width:992px){}
+
+li + ul {
+
+}
