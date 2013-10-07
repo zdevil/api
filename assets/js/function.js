@@ -42,3 +42,13 @@ $(document).ready(function() {
               + pad(d.getUTCSeconds());
         }
 });
+$(window).load(function() {
+  $("#sidebar ul").each(function()
+  {
+    console.log($(this).has("ul li").next('ul').length);
+    if($(this).has("ul li").next('ul').length)
+    {
+        $(this).find('a').prepend("<span class='sub_header_arrow'></span>");
+    }
+  })
+});

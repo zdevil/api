@@ -13,27 +13,5 @@
 <script src="{{ relative }}assets/js/jquery.fixedscroll.min.js"></script>
 <script src="{{ relative }}assets/js/jquery-scrolltofixed-min.js"></script> -->
 <script src="{{ relative }}assets/js/jquery-ui-1.10.3.custom.js"></script>
-
 <script src="{{ relative }}assets/js/jquery.tocify.js"></script>
 <script src="{{ relative }}assets/js/function.js"></script>
-<script>
-
- $(window).load(function() {
-     // $('#sidebar').filter(function(){
-     //      return $(this).child().is('ul')
-     //  }).addClass('sub_header_arrow');
-
-
-     $("#sidebar ul").each(function()
-     {
-    	if($(this).has("ul li").length)
-	{
-		//$(this).children().wrapInner("<span class='sub_header_arrow'></span>");
-		// $(this).find('a').prepend("<span class='sub_header_arrow'></span>");
-                         $(this).find('a').prepend("<span class='sub_header_arrow'></span>");
-		console.log($(this).find('a').html());
-		// console.log("\n");
-            }
-      })
-});
-</script>
