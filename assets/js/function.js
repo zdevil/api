@@ -29,7 +29,8 @@ $(document).ready(function() {
             highlightDefault: true,
             showAndHide: true,
             scrollTo: 80,
-            selector: "h1,h2" });
+            ignoreSelector: '.ignored',
+            selectors: "h1,h2,h3" });
         });
 
         function ISODateString(d){
@@ -45,10 +46,12 @@ $(document).ready(function() {
 $(window).load(function() {
   $("#sidebar ul").each(function()
   {
-    console.log($(this).has("ul li").next('ul').length);
-    if($(this).has("ul li").next('ul').length)
+     if($(this).has("ul li").next('ul').length)
     {
-        $(this).find('a').prepend("<span class='sub_header_arrow'></span>");
-    }
+        $(this).find('a').before("<span class='sub_header_arrow'></span>");
+   }
   })
 });
+
+
+

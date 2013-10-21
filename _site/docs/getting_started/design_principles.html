@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
     <title>Okta Developers</title>
     
@@ -20,6 +21,7 @@
         <script src="../../assets/js/respond.min.js"></script>
         <![endif]-->
     </head>
+    
     <body data-spy="scroll" data-target="#sidebar">
         <!-- Static navbar -->
         <div class="navbar-wrapper">
@@ -35,6 +37,20 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             
                             
                             
@@ -119,7 +135,23 @@
                             
                             
                             
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             <li><a href="/forum/index.html" data-num="3">Discussions</a></li>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             
                             
                             
@@ -162,44 +194,68 @@
 <div class="container">
 	<div class="side-container">
 		<div class="row row-offcanvas row-offcanvas-right" id="f-wrapper">
-			<div class="col-xs-3 col-md-3" id="sidebar-sdks">
+			<div class="col-xs-12 col-md-3" id="sidebar-sdks">
 				<ul>
 					<li class="h1-toc-depth"><a>Content test</a></li>
 
 								
 								
 								<li class="h2-toc-depth">
-									<a href="/docs/endpoints/users.html" data-position="leftsidebar">Endpoints - Users</a>
+									<a href="/docs/endpoints/apps.html" data-position="leftsidebar">Apps</a>
 								</li>
 								
 								
 								
 								<li class="h2-toc-depth">
-									<a href="/docs/examples/session_cookie.html" data-position="">Session Cookie</a>
+									<a href="/docs/endpoints/events.html" data-position="leftsidebar">Events</a>
 								</li>
 								
 								
 								
 								<li class="h2-toc-depth">
-									<a href="/docs/getting_started/design_principles.html" data-position="">Design Principles</a>
+									<a href="/docs/endpoints/groups.html" data-position="leftsidebar">Endpoints - Groups</a>
 								</li>
 								
 								
 								
 								<li class="h2-toc-depth">
-									<a href="/docs/getting_started/error_codes.html" data-position="">Error Codes</a>
+									<a href="/docs/endpoints/sessions.html" data-position="leftsidebar">Sessions</a>
 								</li>
 								
 								
 								
 								<li class="h2-toc-depth">
-									<a href="/docs/getting_started/getting_a_token.html" data-position="">Getting A Token</a>
+									<a href="/docs/endpoints/tokens.html" data-position="leftsidebar">Tokens</a>
 								</li>
 								
 								
 								
 								<li class="h2-toc-depth">
-									<a href="/docs/sdks/getting_started.html" data-position="">Getting Started</a>
+									<a href="/docs/endpoints/users.html" data-position="leftsidebar">Users</a>
+								</li>
+								
+								
+								
+								<li class="h2-toc-depth">
+									<a href="/docs/examples/session_cookie.html" data-position="leftsidebar">Examples - Sessions Cookie</a>
+								</li>
+								
+								
+								
+								<li class="h2-toc-depth">
+									<a href="/docs/getting_started/design_principles.html" data-position="leftsidebar">Getting Started - Design Principles</a>
+								</li>
+								
+								
+								
+								<li class="h2-toc-depth">
+									<a href="/docs/getting_started/error_codes.html" data-position="leftsidebar">Getting Started - Error Codes</a>
+								</li>
+								
+								
+								
+								<li class="h2-toc-depth">
+									<a href="/docs/getting_started/getting_a_token.html" data-position="leftsidebar">Getting Started - Getting a token</a>
 								</li>
 								
 								
@@ -207,6 +263,10 @@
 								
 								
 								
+								
+								<li class="h2-toc-depth">
+									<a href="/index.html" data-position="">Docs</a>
+								</li>
 								
 								
 								
@@ -227,13 +287,15 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-xs-9 col-md-9" style="background-color:white; border-left: 1px solid #ccc; min-height: 800px;">
+			<div class="col-xs-12 col-md-9" style="background-color:white; border-left: 1px solid #ccc; min-height: 800px;">
 				<div style="margin-left:2%;">
 					<div id="section-">
 						<h1 style="margin-top:20px;">Okta SDKs</h1>
 					</div>
 					
-					<ul>
+					<h1 id="toc_0">Design Principles</h1>
+
+<ul>
 <li><a href="#url-namespace">URL Namespace</a></li>
 <li><a href="#media-types">Media Types</a></li>
 <li><a href="#http-verbs">HTTP Verbs</a></li>
@@ -246,7 +308,7 @@
 </ul></li>
 </ul>
 
-<h2 id="toc_0">URL Namespace</h2>
+<h2 id="toc_1">URL Namespace</h2>
 
 <p>All URLs listed in the documentation should be preceded with your organization&#39;s subdomain (tenant) https://&lt;yoursubdomain&gt;.okta.com/api/&lt;apiversion&gt;</p>
 
@@ -254,14 +316,14 @@
 
 <p><em>Note: All API access is over HTTPS</em></p>
 
-<h2 id="toc_1">Media Types</h2>
+<h2 id="toc_2">Media Types</h2>
 
 <p>The API currently only supports JSON as an exchange format.  Be sure to set both the Content-Type and Accept headers for every request as <code>application/json</code>.</p>
 
 <p>All Date objects are returned in ISO 8601 format:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">YYYY-MM-DDTHH:MM:SSZ
 </code></pre></div>
-<h2 id="toc_2">HTTP Verbs</h2>
+<h2 id="toc_3">HTTP Verbs</h2>
 
 <p>Where possible, the Okta API strives to use appropriate HTTP verbs for each
 action.</p>
@@ -283,7 +345,7 @@ with no <code>body</code> param, be sure to set the <code>Content-Length</code> 
 
 <p><em>Note: Any PUT or POST request with no Content-Length header nor a body will return a 411 error.  To get around this, either include a Content-Length: 0 header</em></p>
 
-<h2 id="toc_3">Errors</h2>
+<h2 id="toc_4">Errors</h2>
 
 <p>All requests on success will return a 200 status if there is content to return or a 204 status if there is no content to return.</p>
 
@@ -311,7 +373,7 @@ with no <code>body</code> param, be sure to set the <code>Content-Length</code> 
 
 <p><em>Note: Only the <code>errorCode</code> property is supported for runtime error flow control.  The <code>errorSummary</code> property is only to intended for troubleshooting and may change over time</em></p>
 
-<h2 id="toc_4">Authentication</h2>
+<h2 id="toc_5">Authentication</h2>
 
 <p>The API currently only supports API keys with a custom HTTP authentication scheme <code>SSWS</code> for API authentication. All requests must have a valid API key specified in the HTTP <code>Authorization</code> header with the <code>SSWS</code> scheme.</p>
 
@@ -319,7 +381,7 @@ with no <code>body</code> param, be sure to set the <code>Content-Length</code> 
 
 <p>See <a href="getting_a_token.md">Obtaining a token</a> for instructions on how to get an API key for your organization.</p>
 
-<h2 id="toc_5">Pagination</h2>
+<h2 id="toc_6">Pagination</h2>
 
 <p>Requests that return a list of resources may support paging.  Pagination is based on
 cursor and not on page number. The cursor is opaque to the client and specified in either the <code>?before</code> or <code>?after</code> query parameter.  For some resources, you can also set a custom page size with the <code>?limit</code> parameter.</p>
@@ -336,7 +398,7 @@ see the <a href="../endpoints/events.md">Events</a> API for example.</p>
 <p><code>limit</code>
 : This is the number of individual objects that are returned in each page.</p>
 
-<h3 id="toc_6">Link Header</h3>
+<h3 id="toc_7">Link Header</h3>
 
 <p>Pagination links are included in the <a href="http://tools.ietf.org/html/rfc5988">Link
 header</a>. It is <strong>important</strong> to

@@ -1,6 +1,6 @@
 ---
 layout: sdks
-title: Endpoints - Users
+title: Users
 category : Endpoints
 tagline: "Endpoints - Users"
 tags : [endpoints, users]
@@ -9,46 +9,47 @@ position: leftsidebar
 priority: 4
 ---
 
-# Overview
+# Users
+## Overview
 
 The User API provides operations for user management.
 
 - [User Model](#user-model)
-	- [Metadata Attributes](#metadata-attributes)
-	- [Profile Object](#profile-object)
-	- [Credentials Object](#credentials-object)
-	- [Links Object](#links-object)
-- [User Operations](#user-operations)	
-	- [Create User](#create-user)
-		- [Create User without Credentials](#create-user-without-credentials)
-		- [Create User with Recovery Question](#create-user-with-recovery-question)
-		- [Create User with Password](#create-user-with-password)
-		- [Create User with Password & Recovery Question](#create-user-with-password--recovery-question)
-	- [Get User](#get-user)
-		- [Get User with id](#get-user-with-id)
-		- [Get User with login](#get-user-with-login)
-		- [Get User with login shortname](#get-user-with-login-shortname)
-	- [List Users](#list-users)
-		- [List Users with Search](#list-users-with-search)
-		- [List Users with Status (Filter)](#list-users-with-status-filter)
-	- [Update User](#update-user)
-		- [Update Profile](#update-profile)
-		- [Update Password](#update-password)
-		- [Update Recovery Question & Answer](#update-recovery-question--answer)
+    - [Metadata Attributes](#metadata-attributes)
+    - [Profile Object](#profile-object)
+    - [Credentials Object](#credentials-object)
+    - [Links Object](#links-object)
+- [User Operations](#user-operations)   
+    - [Create User](#create-user)
+        - [Create User without Credentials](#create-user-without-credentials)
+        - [Create User with Recovery Question](#create-user-with-recovery-question)
+        - [Create User with Password](#create-user-with-password)
+        - [Create User with Password & Recovery Question](#create-user-with-password--recovery-question)
+    - [Get User](#get-user)
+        - [Get User with id](#get-user-with-id)
+        - [Get User with login](#get-user-with-login)
+        - [Get User with login shortname](#get-user-with-login-shortname)
+    - [List Users](#list-users)
+        - [List Users with Search](#list-users-with-search)
+        - [List Users with Status (Filter)](#list-users-with-status-filter)
+    - [Update User](#update-user)
+        - [Update Profile](#update-profile)
+        - [Set Password](#set-password)
+        - [Set Recovery Question & Answer](#set-recovery-question--answer)
 - [Related Resources](#related-resources)
-	- [Get Assigned App Links](#get-assigned-app-links)
-	- [Get Member Groups](#get-member-groups)
+    - [Get Assigned App Links](#get-assigned-app-links)
+    - [Get Member Groups](#get-member-groups)
 - [Lifecycle Operations](#lifecycle-operations)
-	- [Activate](#activate-user)
-	- [Deactivate](#deactivate-user)
-	- [Unlock](#unlock-user)
-	- [Reset Password](#reset-password)
+    - [Activate](#activate-user)
+    - [Deactivate](#deactivate-user)
+    - [Unlock](#unlock-user)
+    - [Reset Password](#reset-password)
 - [Credential Operations](#credential-operations)
-	- [Forgot Password](#forgot-password)
-	- [Change Password](#change-password)
-	- [Change Recovery Question](#change-recovery-question)
+    - [Forgot Password](#forgot-password)
+    - [Change Password](#change-password)
+    - [Change Recovery Question](#change-recovery-question)
 
-# User Model
+## User Model
 
 Content Type: application/json
 
@@ -57,7 +58,7 @@ Content Type: application/json
 - [Credentials Object](#credentials-object)
 - [Links Object](#links-object)
 
-## Example
+### Example
 
 ```json
 {
@@ -100,11 +101,11 @@ Content Type: application/json
 }
 ```
 
-## Metadata Attributes
+### Metadata Attributes
 The User model defines several ***read-only*** attributes:
 
 Attribute | Description | DataType | Nullable
---- | --- | ---	| ---
+--- | --- | --- | ---
 id | unique key for user | String | FALSE
 status | current status | Enum: STAGED, PROVISIONED, ACTIVE, RECOVERY, LOCKED_OUT, DEPROVISIONED | FALSE
 created | timestamp when user was created | Date | FALSE
@@ -115,11 +116,11 @@ transitioningToStatus | target status of an inprogress asynchronous status trans
 
 *Note: These attributes are only available after a user is created*
 
-`activated` timestamp will only be avaialble to users created after *06/30/2013*.
+`activated` timestamp will only be available to users activated after *06/30/2013*.
 
 `statusChanged` and `lastLogin` timestamps will be missing for users created before *06/30/2013*.  They will be updated on next status change or login.
 
-## Profile Object
+### Profile Object
 Specifies standard and custom profile attributes for a user.
 
 ```json
@@ -136,25 +137,25 @@ Specifies standard and custom profile attributes for a user.
 }
 ```
 
-### Standard Attributes
+#### Standard Attributes
 All profiles have the following attributes:
 
 Attribute | DataType | MinLength | MaxLength | Nullable | Unique | Validation
---- | --- | ---	| --- | --- | --- | ---
+--- | --- | --- | --- | --- | --- | ---
 login | String | 5 | 100 | FALSE | TRUE | [RFC 6531 section 3.3](http://tools.ietf.org/html/rfc6531#section-3.3)
-email |	String | 5 | 100 |	FALSE | TRUE |	[RFC 5322 section 3.2.3](http://tools.ietf.org/html/rfc5322#section-3.2.3)
-firstName | String | 1 | 50	| FALSE	| FALSE	|
-lastName | String | 1 | 50	| FALSE	| FALSE	|
-mobilePhone | String |	0 |	100	| TRUE | FALSE	|
+email | String | 5 | 100 |  FALSE | TRUE |  [RFC 5322 section 3.2.3](http://tools.ietf.org/html/rfc5322#section-3.2.3)
+firstName | String | 1 | 50 | FALSE | FALSE |
+lastName | String | 1 | 50  | FALSE | FALSE |
+mobilePhone | String |  0 | 100 | TRUE | FALSE  |
 
-### Custom Attributes
+#### Custom Attributes
 Custom attributes may be added to a user profile.  Custom attributes must be single-value (non-array) and have a data type of `Number`, `String`, `Boolean`, or `null`.
 
-## Credentials Object
+### Credentials Object
 Specifies credentials for a user.  Credential types and requirements vary depending on the operation and security policy of the organization.
 
 Attribute | DataType | MinLength | MaxLength | Nullable | Unique | Validation
---- | --- | ---	| --- | --- | --- | ---
+--- | --- | --- | --- | --- | --- | ---
 password | [Password Object](#password-object) | | | TRUE | FALSE |
 recovery_question | [Recovery Question Object](#recovery-question-object) | | | TRUE | FALSE |
 
@@ -172,25 +173,25 @@ recovery_question | [Recovery Question Object](#recovery-question-object) | | | 
 }
 ```
 
-### Password Object
+#### Password Object
 
 Specifies a password for a user.  A password value is a **write-only** property.  When a user has a valid password and a response object contains a password credential, then the Password Object will be a bare object without the ```value``` property defined (e.g. ```password: {}```) to indicate that a password value exists.
 
 Attribute | DataType | MinLength | MaxLength | Nullable | Unique | Validation
---- | --- | ---	| --- | --- | --- | ---
+--- | --- | --- | --- | --- | --- | ---
 value | String | *Password Policy* | 40 | TRUE | FALSE | *Password Policy* 
 
 
-### Recovery Question Object
+#### Recovery Question Object
 
 Specifies a secret question and answer that is validated when a user forgets their password.  The answer property is **write-only**.
 
 Attribute | DataType | MinLength | MaxLength | Nullable | Unique | Validation
---- | --- | ---	| --- | --- | --- | ---
+--- | --- | --- | --- | --- | --- | ---
 question | String | 1 | 100 | TRUE | FALSE |
 answer | String | 1 | 100 | TRUE | FALSE |
 
-## Links Object
+### Links Object
 
 Specifies link relations (See [Web Linking](http://tools.ietf.org/html/rfc5988)) available for the current status of a user.  The Links Object is used for dynamic discovery of related resources and lifecycle or credential operations.  The Links Object is **read-only**.
 
@@ -205,15 +206,15 @@ changePassword | [Changes a user's password](#change-password) validating the us
 changeRecoveryQuestion | [Changes a user's recovery credential](#change-recovery-question) by validating the user's current password
 unlock | [Lifecycle operation](#unlock-user) to returns a user to **ACTIVE** status when their current status is **LOCKED_OUT** due to exceeding failed login attempts
 
-#User Operations
+## User Operations
 
-## Create User
+### Create User
 
 Creates a new user in your Okta organization.
 
-### POST /users
+#### POST /users
 
-#### Request Parameters
+##### Request Parameters
 
 Parameter | Description | Param Type | DataType | Required | Default
 --- | --- | --- | --- | --- | ---
@@ -228,7 +229,7 @@ Users can be created with or without credentials:
 - [Create User with Password](#create-user-with-password)
 - [Create User with Password & Recovery Question](#create-user-with-password--recovery-question)
 
-#### Response Parameters
+##### Response Parameters
 
 All responses return the created [User](#user-model).  Activation of a user is an asynchronous operation.  The user will have the `transitioningToStatus` property with a value of **ACTIVE** during activation to indicate that the user hasn't completed the asynchronous operation.  The user will have a `status` of **ACTIVE** when the activation process is complete.
 
@@ -245,15 +246,15 @@ X| |TRUE|PROVISIONED|One-Time Token (Email)|X
 X|X|FALSE|STAGED| |
 X|X|TRUE|ACTIVE|Password|
 
-### Create User without Credentials ###
+#### Create User without Credentials ###
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X POST https://your-domain.okta.com/api/v1/users?activate=false \
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X POST "https://your-domain.okta.com/api/v1/users?activate=false" \
 -d \
 '{
   "profile": {
@@ -266,7 +267,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }'
 ```
 
-#### Response
+##### Response
 
 ```json
 {
@@ -277,7 +278,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
     "statusChanged": null,
     "lastLogin": null,
     "profile": {
-	    "firstName": "Isaac",
+        "firstName": "Isaac",
         "lastName": "Brock",
         "email": "isaac@example.org",
         "login": "isaac@example.org",
@@ -292,15 +293,15 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }
 ```
 
-### Create User with Recovery Question
+#### Create User with Recovery Question
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X POST https://your-domain.okta.com/api/v1/users?activate=false \
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X POST "https://your-domain.okta.com/api/v1/users?activate=false" \
 -d \
 '{
   "profile": {
@@ -319,7 +320,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }'
 ```
 
-#### Response
+##### Response
 
 ```json
 {
@@ -330,7 +331,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
     "statusChanged": null,
     "lastLogin": null,
     "profile": {
-	    "firstName": "Isaac",
+        "firstName": "Isaac",
         "lastName": "Brock",
         "email": "isaac@example.org",
         "login": "isaac@example.org",
@@ -349,15 +350,15 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }
 ```
 
-### Create User with Password
+#### Create User with Password
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X POST https://your-domain.okta.com/api/v1/users?activate=false \
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X POST "https://your-domain.okta.com/api/v1/users?activate=false" \
 -d \
 '{
   "profile": {
@@ -373,7 +374,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }'
 ```
 
-#### Response
+##### Response
 
 ```json
 {
@@ -384,7 +385,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
     "statusChanged": null,
     "lastLogin": null,
     "profile": {
-	    "firstName": "Isaac",
+        "firstName": "Isaac",
         "lastName": "Brock",
         "email": "isaac@example.org",
         "login": "isaac@example.org",
@@ -401,16 +402,16 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }
 ```
 
-### Create User with Password & Recovery Question
+#### Create User with Password & Recovery Question
 
-#### Request
+##### Request
 
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X POST https://your-domain.okta.com/api/v1/users?activate=false \
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X POST "https://your-domain.okta.com/api/v1/users?activate=false" \
 -d \
 '{
   "profile": {
@@ -430,7 +431,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }'
 ```
 
-#### Response
+##### Response
 ```json
 {
     "id": "00u1ero7vZFVEIYLWPBN",
@@ -440,7 +441,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
     "statusChanged": null,
     "lastLogin": null,
     "profile": {
-	    "firstName": "Isaac",
+        "firstName": "Isaac",
         "lastName": "Brock",
         "email": "isaac@example.org",
         "login": "isaac@example.org",
@@ -459,13 +460,13 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }
 ```
 
-## Get User
+### Get User
 
 Fetches a user from your Okta organization
 
-### GET /users/:id
+#### GET /users/:id
 
-#### Request Parameters
+##### Request Parameters
 
 Fetch a specific user by id, login, or login shortname (as long as it is unambiguous).
 
@@ -473,22 +474,22 @@ Parameter | Description | Param Type | DataType | Required | Default
 --- | --- | --- | --- | --- | ---
 id | `id`, `login`, or *login shortname* (as long as it is unambiguous) | URL | String | TRUE |
 
-#### Response Parameters
+##### Response Parameters
 
 Fetched [User](#user-model)
 
-### Get User with id
+#### Get User with id
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X GET https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR 
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X GET "https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR"
 ```
 
-#### Response
+##### Response
 
 ```json
 {
@@ -531,18 +532,18 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }
 ```
 
-### Get User with login
+#### Get User with login
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X GET https://your-domain.okta.com/api/v1/users/isaac@example.org
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X GET "https://your-domain.okta.com/api/v1/users/isaac@example.org"
 ```
 
-#### Response
+##### Response
 ```json
 {
     "id": "00ub0oNGTSWTBKOLGLNR",
@@ -584,18 +585,18 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }
 ```
 
-### Get User with login shortname
+#### Get User with login shortname
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X GET https://your-domain.okta.com/api/v1/users/isaac
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X GET "https://your-domain.okta.com/api/v1/users/isaac"
 ```
 
-#### Response
+##### Response
 ```json
 {
     "id": "00ub0oNGTSWTBKOLGLNR",
@@ -637,13 +638,13 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }
 ```
 
-## List Users
+### List Users
 
-### GET /users
+#### GET /users
 
 Fetch a list of users from your Okta organization.
 
-#### Request Parameters
+##### Request Parameters
 
 Parameter | Description | Param Type | DataType | Required | Default
 --- | --- | --- | --- | --- | ---
@@ -653,22 +654,22 @@ filter | Filters users by `status` expression (See Filter Expressions) | Query |
 
 *Note: Search currently performs a startsWith match but it should be considered an implementation detail and may change without notice in the future*
 
-#### Response Parameters
+##### Response Parameters
 
 Array of [User](#user-model)
 
-### List Users with Defaults
+#### List Users with Defaults
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X GET https://your-domain.okta.com/api/v1/users 
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X GET "https://your-domain.okta.com/api/v1/users"
 ```
 
-#### Response
+##### Response
 ```json
 [
     {
@@ -679,7 +680,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
         "statusChanged": null,
         "lastLogin": null,
         "profile": {
-    	    "firstName": "Isaac",
+            "firstName": "Isaac",
             "lastName": "Brock",
             "email": "isaac@example.org",
             "login": "isaac@example.org",
@@ -733,18 +734,18 @@ curl -v -H "Authorization:SSWS yourtoken" \
 ]
 ```
 
-### List Users with Search
+#### List Users with Search
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X GET https://your-domain.okta.com/api/v1/users?q=er&limit=1
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X GET "https://your-domain.okta.com/api/v1/users?q=er&limit=1"
 ```
 
-#### Response
+##### Response
 ```json
 [
     {
@@ -788,18 +789,18 @@ curl -v -H "Authorization:SSWS yourtoken" \
 ]
 ```
 
-### List Users with Status (Filter)
+#### List Users with Status (Filter)
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X GET https://your-domain.okta.com/api/v1/users?filter=status+eq+\"ACTIVE\"
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X GET "https://your-domain.okta.com/api/v1/users?filter=status+eq+\"ACTIVE\""
 ```
 
-#### Response
+##### Response
 
 ```json
 [
@@ -844,13 +845,13 @@ curl -v -H "Authorization:SSWS yourtoken" \
 ]
 ```
 
-## Update User
+### Update User
 
-### PUT /users/:id
+#### PUT /users/:id
 
 Update a user's profile and/or credentials.
 
-#### Request Parameters
+##### Request Parameters
 
 Parameter | Description | Param Type | DataType | Required | Default
 --- | --- | --- | --- | --- | ---
@@ -862,19 +863,19 @@ credentials | Update credentials for user | Body | [Credentials Object](#credent
 
 *Note: All profile attributes must be specified when updating a user's profile.  __Partial updates are not supported!__*
 
-#### Response Parameters
+##### Response Parameters
 
 Updated [User](#user-model)
 
-### Update Profile
+#### Update Profile
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X PUT https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR \
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X PUT "https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR" \
 -d \
 '{
     "profile": {
@@ -888,7 +889,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }'
 ```
 
-#### Response
+##### Response
 
 ```json
 {
@@ -932,7 +933,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }
 ```   
 
-### Update Password
+#### Set Password
 
 This is an administrative operation and does not validate existing user credentials.  For operations that validate credentials refer to:
 
@@ -940,13 +941,13 @@ This is an administrative operation and does not validate existing user credenti
 - [Forgot Password](#forgot-password)
 - [Change Password](#change-password)
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X PUT https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR \
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X PUT "https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR" \
 -d \
 '{
   "credentials": {
@@ -955,7 +956,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }'
 ```
 
-#### Response
+##### Response
 
 ```json
 {
@@ -998,17 +999,17 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }
 ```    
 
-### Update Recovery Question & Answer
+#### Set Recovery Question & Answer
 
 This is an administrative operation and does not validate existing user credentials.  See [Change Recovery Question](#change-recovery-question) for an operation that requires validation
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X PUT https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR \
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X PUT "https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR" \
 -d \
 '{
   "credentials": {
@@ -1020,7 +1021,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }'
 ```
 
-#### Response
+##### Response
 
 ```json
 {
@@ -1062,34 +1063,34 @@ curl -v -H "Authorization:SSWS yourtoken" \
     }
 }
 ```
-# Related Resources    
+## Related Resources    
 
-## Get Assigned App Links
+### Get Assigned App Links
 
-### GET /users/:id/appLinks
+#### GET /users/:id/appLinks
 
 Fetches appLinks for all direct or indirect (via group membership) assigned applications
 
-#### Request Parameters
+##### Request Parameters
 
 Parameter | Description | Param Type | DataType | Required | Default
 --- | --- | --- | --- | --- | ---
 id | `id` of user | URL | String | TRUE |
 
-#### Response Type
+##### Response Type
 
 Array of App Links
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X GET https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/appLinks 
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X GET "https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/appLinks"
 ```
 
-#### Response
+##### Response
 
 ```json
 [
@@ -1140,30 +1141,30 @@ curl -v -H "Authorization:SSWS yourtoken" \
 ]
 ```
 
-## Get Member Groups
+### Get Member Groups
 
-### GET /users/:id/groups
+#### GET /users/:id/groups
 
 Fetches the groups of which the user is a member.
 
-#### Request Parameters
+##### Request Parameters
 
 Parameter | Description | Param Type | DataType | Required | Default
 --- | --- | --- | --- | --- | ---
 id | `id` of user | URL | String | TRUE |
 
-#### Response Type
+##### Response Type
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X GET https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/groups 
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X GET "https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/groups" 
 ```
 
-#### Response
+##### Response
 
 ```json
 [
@@ -1184,24 +1185,26 @@ curl -v -H "Authorization:SSWS yourtoken" \
 ]
 ```
 
-# Lifecycle Operations
+## Lifecycle Operations
 
-## Activate User
+Lifecycle operations are non-idempotent operations that initiate a state transition for a user's status.  Some operations are asynchronous while others are synchronous.  The user's current status limits what operations are allowed.  For example, you can't unlock a user that is `ACTIVE`.
 
-#### POST /users/:id/lifecycle/activate
+### Activate User
+
+##### POST /users/:id/lifecycle/activate
 
 Activates a user.  This operation can only be performed on users with a **STAGED** `status`.  Activation of a user is an asynchronous operation.  The user will have the `transitioningToStatus` property with a value of **ACTIVE** during activation to indicate that the user hasn't completed the asynchronous operation.  The user will have a `status` of **ACTIVE** when the activation process is complete.
 
 *Note: Users that do not have a password must complete the welcome flow by visiting the activation link to complete the transition to __ACTIVE__ status.*
 
-#### Request Parameters
+##### Request Parameters
 
 Parameter | Description | Param Type | DataType | Required | Default
 --- | --- | --- | --- | --- | ---
 id | `id` of user | URL | String | TRUE |
 sendEmail | Sends an activation email to the user if `true` | Query | Boolean | FALSE | TRUE
 
-#### Response Parameters
+##### Response Parameters
 
 Returns empty object by default. When `sendEmail` is `false`, returns an activation link for the user to set up their account.
 
@@ -1213,16 +1216,16 @@ Returns empty object by default. When `sendEmail` is `false`, returns an activat
 
 *Note: If a password was set before the user was activated, then user must login with with their password and not the activation link*
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/activate?sendEmail=false
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X POST "https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/activate?sendEmail=false"
 ```
 
-#### Response
+##### Response
 
 ```json    
 {
@@ -1230,71 +1233,75 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }
 ```
 
-## Deactivate User
+### Deactivate User
 
-#### POST /users/:id/lifecycle/deactivate
+##### POST /users/:id/lifecycle/deactivate
 
 Deactivates a user.  This operation can only be performed on users that do not have a **DEPROVISIONED** `status`.  Deactivation of a user is an asynchronous operation.  The user will have the `transitioningToStatus` property with a value of **DEPROVISIONED** during deactivation to indicate that the user hasn't completed the asynchronous operation.  The user will have a `status` of **DEPROVISIONED** when the deactivation process is complete.
 
 *Note: Deactivating a user is a __destructive__ operation.  The user will be deprovisioned from all assigned applications which may destroy their data such as email or files.  __This action cannot be recovered!__*
 
-#### Request Parameters
+##### Request Parameters
 
 Parameter | Description | Param Type | DataType | Required | Default
 --- | --- | --- | --- | --- | ---
 id | `id` of user | URL | String | TRUE |
 
-#### Response Parameters
+##### Response Parameters
 
 Returns an empty object
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/deactivate
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X POST "https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/deactivate"
 ```
 
-## Unlock User
+### Unlock User
 
-#### POST /users/:id/lifecycle/unlock
+##### POST /users/:id/lifecycle/unlock
 
 Unlocks a user with a **LOCKED_OUT** status and returns them to **ACTIVE** `status`.  Users will be able to login with their current password.
 
-#### Request Parameters
+*Note: This operation currently only works with Okta-mastered users and does not support directory-mastered accounts such as Active Directory.*
+
+##### Request Parameters
 
 Parameter | Description | Param Type | DataType | Required | Default
 --- | --- | --- | --- | --- | ---
 id | `id` of user | URL | String | TRUE |
 
-#### Response Parameters
+##### Response Parameters
 
 Returns an empty object
 
-#### Request
+##### Request
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/unlock
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X POST "https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/unlock"
 ```
 
-## Reset Password
+### Reset Password
 
-### POST /users/:id/lifecycle/reset_password
+#### POST /users/:id/lifecycle/reset_password
 
-Resets the password for a user. The user will transition to the `status` of **RECOVERY** and will not be able to login until they complete the reset flow.
+Generates a one-time token (OTT) that can be used to reset a user's password.  The OTT link can be automatically emailed to the user or returned to the API caller and distributed using a custom flow.
 
-#### Request Parameters
+This operation will transition the user to the `status` of **RECOVERY** and the user will not be able to login or initiate a forgot password flow until they complete the reset flow.
+
+##### Request Parameters
 
 Parameter | Description | Param Type | DataType | Required | Default
 --- | --- | --- | --- | --- | ---
 id | `id` of user | URL | String | TRUE |
 sendEmail | Sends reset password email to the user if `true` | Query | Boolean | FALSE | TRUE
 
-#### Response Parameters
+##### Response Parameters
 
 Returns an empty object by default. When `sendEmail` is `false`, returns a link for the user to reset their password.
 
@@ -1304,16 +1311,16 @@ Returns an empty object by default. When `sendEmail` is `false`, returns a link 
 }
 ```
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/reset_password?sendEmail=false
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X POST "https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/reset_password?sendEmail=false"
 ```
 
-#### Response
+##### Response
 
 ```json
 {
@@ -1321,22 +1328,22 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }
 ```
 
-# Credential Operations
-	
-## Forgot Password
+## Credential Operations
+    
+### Forgot Password
 
-### POST /users/:id/lifecycle/forgot_password
+#### POST /users/:id/lifecycle/forgot_password
 
-Generates a one-time token that can be used to reset a user's password.  The user will be required to validate their security question's answer when visiting the reset link.  This operation can only be performed on users in **ACTIVE** or **RECOVERY** `status` that have a valid [recovery question credential](#recovery-question-object)
+Generates a one-time token (OTT) that can be used to reset a user's password.  The user will be required to validate their security question's answer when visiting the reset link.  This operation can only be performed on users with a valid [recovery question credential](#recovery-question-object) and have an **ACTIVE** `status`.
 
-#### Request Parameters
+##### Request Parameters
 
 Parameter | Description | Param Type | DataType | Required | Default
 --- | --- | --- | --- | --- | ---
 id | `id` of user | URL | String | TRUE |
 sendEmail | Sends a forgot password email to the user if `true` | Query | Boolean | FALSE | TRUE
 
-#### Response Parameters
+##### Response Parameters
 
 Returns an empty object by default. When `sendEmail` is `false`, returns a link for the user to reset their password. 
 
@@ -1347,16 +1354,16 @@ Returns an empty object by default. When `sendEmail` is `false`, returns a link 
 ```
 *Note: This operation does not affect the status of the user.*
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/forgot_password?sendEmail=false
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X POST "https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/forgot_password?sendEmail=false"
 ```
 
-#### Response
+##### Response
 
 ```json
 {
@@ -1364,11 +1371,14 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }
 ```
 
-### POST /users/:id/credentials/forgot_password
+#### POST /users/:id/credentials/forgot_password
+  
+Sets a new password for a user by validating the user's answer to their current recovery question.  This operation can only be performed on users with a valid [recovery question credential](#recovery-question-object) and have an **ACTIVE** `status`.
 
-Sets a new password for a user by validating the user's answer to their current recovery question.  This operation can only be performed on users in **ACTIVE** or **RECOVERY** `status` that have a valid [recovery question credential](#recovery-question-object)
+*Note: This operation is intended for applications that need to implement their own forgot password flow.  You are responsible for mitigation of all security risks such as phishing and replay attacks.  Best-practice is to generate a short-lived one-time token (OTT) that is sent to a verified email account.*
 
-#### Request Parameters
+
+##### Request Parameters
 
 Parameter | Description | Param Type | DataType | Required | Default
 --- | --- | --- | --- | --- | ---
@@ -1376,19 +1386,19 @@ id | `id` of user | URL | String | TRUE |
 password | New password for user | Body | [Password Object](#password-object) | TRUE |
 recovery_question | Answer to user's current recovery question | Body | [Recovery Question Object](#recovery-question-object) | TRUE |
 
-#### Response Parameters
+##### Response Parameters
 
 [Credentials](#credentials-object) of the user
 
-*Note: The user will transition to __ACTIVE__ status when successfully invoked in __RECOVERY__ status*
+*Note: This operation does not affect the status of the user.*
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/forgot_password \
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X POST "https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/forgot_password" \
 -d \
 '{
     "password": { "value": "MyN3wP@55w0rd" }, 
@@ -1396,7 +1406,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }'
 ```
 
-#### Response
+##### Response
 
 ```json
 {
@@ -1409,13 +1419,13 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }
 ```
 
-## Change Password
+### Change Password
 
-### POST /users/:id/credentials/change_password
+#### POST /users/:id/credentials/change_password
 
 Changes a user's password by validating the user's current password.  This operation can only be performed on users in **STAGED**, **ACTIVE** or **RECOVERY** `status` that have a valid [password credential](#password-object)
 
-#### Request Parameters
+##### Request Parameters
 
 Parameter | Description | Param Type | DataType | Required | Default
 --- | --- | --- | --- | --- | ---
@@ -1423,19 +1433,19 @@ id | `id` of user | URL | String | TRUE |
 oldPassword | Current password for user | Body | [Password Object](#password-object) | TRUE |
 newPassword | New password for user | Body | [Password Object](#password-object) | TRUE |
 
-#### Response Parameters
+##### Response Parameters
 
 [Credentials](#credentials-object) of the user
 
 *Note: The user will transition to __ACTIVE__ status when successfully invoked in __RECOVERY__ status*
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/change_password \
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X POST "https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/change_password" \
 -d \
 '{
     "oldPassword": { "value": "GoAw@y123" },
@@ -1443,7 +1453,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }'
 ```
 
-#### Response
+##### Response
 
 ```json
 {
@@ -1456,13 +1466,13 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }
 ```
 
-## Change Recovery Question
+### Change Recovery Question
 
-### POST /users/:id/credentials/change_recovery_question
+#### POST /users/:id/credentials/change_recovery_question
 
 Changes a user's recovery question & answer credential by validating the user's current password.  This operation can only be performed on users in **STAGED**, **ACTIVE** or **RECOVERY** `status` that have a valid [password credential](#password-object)
 
-#### Request Parameters
+##### Request Parameters
 
 Parameter | Description | Param Type | DataType | Required | Default
 --- | --- | --- | --- | --- | ---
@@ -1470,19 +1480,19 @@ id | `id` of user | URL | String | TRUE |
 password | Current password for user | Body | [Password Object](#password-object) | TRUE |
 recovery_question | New recovery question & answer for user| Body | [Recovery Question Object](#recovery-question-object) | TRUE |
 
-#### Response Parameters
+##### Response Parameters
 
 [Credentials](#credentials-object) of the user
 
 *Note: This operation does not affect the status of the user.*
 
-#### Request
+##### Request
 
 ```sh
-curl -v -H "Authorization:SSWS yourtoken" \
--H "Accept:application/json" \
--H "Content-type:application/json" \
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/change_recovery_question \
+curl -v -H "Authorization: SSWS yourtoken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X POST "https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/change_recovery_question" \
 -d \
 '{
     "password": { "value": "GoAw@y123" }, 
@@ -1493,7 +1503,7 @@ curl -v -H "Authorization:SSWS yourtoken" \
 }'
 ```
 
-#### Response
+##### Response
 
 ```json
 {

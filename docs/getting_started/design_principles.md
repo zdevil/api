@@ -1,12 +1,15 @@
 ---
 layout: sdks
-title: Design Principles
+title: Getting Started - Design Principles
 category : Getting Started
-tagline: "Design Principles"
-tags : [design, principles]
-priority: 2
+tagline: "Getting Started - Design Principles"
+tags : [getting stated, design principles]
+icon: "glyphicon glyphicon-design"
+position: leftsidebar
+priority: 1
 ---
 
+# Design Principles
 
 - [URL Namespace](#url-namespace)
 - [Media Types](#media-types)

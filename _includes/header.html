@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    {% if page.home %}
+    <meta http-equiv="refresh" content="0;url=/documentation/index.html" />
+    {% endif %}
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
     <title>Okta Developers</title>
     {% capture lvl %}{{ page.url | append:'index.html' | split:'/' | size }}{% endcapture %}
@@ -22,6 +25,7 @@
         <script src="../../assets/js/respond.min.js"></script>
         <![endif]-->
     </head>
+    {{page.home}}
     <body data-spy="scroll" data-target="#sidebar">
         <!-- Static navbar -->
         <div class="navbar-wrapper">

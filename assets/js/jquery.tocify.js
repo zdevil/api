@@ -1,4 +1,4 @@
-/* jquery Tocify - v1.8.0 - 2013-09-16
+/* jquery Tocify - v1.9.0 - 2013-10-01
 * http://www.gregfranko.com/jquery.tocify.js/
 * Copyright (c) 2013 Greg Franko; Licensed MIT */
 
@@ -38,7 +38,7 @@
     $.widget("toc.tocify", {
 
         //Plugin version
-        version: "1.8.0",
+        version: "1.9.0",
 
         // These options will be used as defaults
         options: {
@@ -183,6 +183,7 @@
 
                 // Once all animations on the page are complete, this callback function will be called
                 $("html, body").promise().done(function() {
+
                     setTimeout(function() {
 
                         self.extendPageScroll = false;
@@ -245,19 +246,29 @@
                 if($(this).is(ignoreSelector)) {
                     return;
                 }
-
                 // Creates an unordered list HTML element and adds a dynamic ID and standard class name
                 ul = $("<ul/>", {
                     "id": headerClassName + index,
-                    "class": headerClassName
+                    "class": headerClassName,
                 }).
-
+               
                 // Appends a top level list item HTML element to the previously created HTML header
                 append(self._nestElements($(this), index));
 
                 // Add the created unordered list element to the HTML element calling the plugin
                 self.element.append(ul);
 
+
+
+                var folder = $(this).closest('.twocolordiv').next('.page_block_name').text();
+                if (folder.length)
+                {
+                     var span = $("<span/>", {
+                        "class": "page_block_name",
+                        "text" : $(this).closest('.twocolordiv').next('.page_block_name').text(),
+                    });
+                       self.element.append(span);
+                }
                 // Finds all of the HTML tags between the header and subheader elements
                 $(this).nextUntil(this.nodeName.toLowerCase()).each(function() {
 
@@ -269,11 +280,11 @@
 
                             //If the element matches the ignoreSelector then we skip it
                             if($(this).is(ignoreSelector)) {
-
                                 return;
                             }
 
                             self._appendSubheaders.call(this, self, ul);
+                           
 
                         });
 
@@ -308,7 +319,7 @@
 
                 hash = window.location.hash.substring(1),
 
-                elem = self.element.find("li[data-unique='" + hash + "']");
+                elem = self.element.find('li[data-unique="' + hash + '"]');
 
             if(hash.length) {
 
@@ -349,7 +360,7 @@
         // _nestElements
         // -------------
         //      Helps create the table of contents list by appending nested list items
-        _nestElements: function(self, index, has_parent) {
+        _nestElements: function(self, index) {
 
             var arr, item, hashValue;
 
@@ -376,7 +387,7 @@
             }
 
             hashValue = this._generateHashValue(arr, self, index);
-            // span = $('<span class="caret"></span>');
+
             // Appends a list item HTML element to the last unordered list HTML element found within the HTML element calling the plugin
             item = $("<li/>", {
 
@@ -385,22 +396,12 @@
 
                 "data-unique": hashValue
 
-            });
-
-            if (has_parent)
-            {
-                
-             // item.append($("<span/>", {
-
-             //        "class": 'sub_header_arrow'
-
-             //    }));
-         }
-            item.append($("<a/>", {
+            }).append($("<a/>", {
 
                 "text": self.text()
 
             }));
+            item.wrap('<span/>');
             // Adds an HTML anchor tag before the currently traversed HTML element
             self.before($("<div/>", {
 
@@ -462,14 +463,14 @@
         // ---------------
         //      Helps create the table of contents list by appending subheader elements
 
-        _appendSubheaders: function(self, ul, has_parent) {
+        _appendSubheaders: function(self, ul) {
 
             // The current element index
             var index = $(this).index(self.options.selectors),
 
                 // Finds the previous header DOM element
                 previousHeader = $(self.options.selectors).eq(index - 1),
-             
+
                 currentTagName = +$(this).prop("tagName").charAt(1),
 
                 previousTagName = +previousHeader.prop("tagName").charAt(1),
@@ -487,8 +488,7 @@
             // If the current header DOM element is the same type of header(eg. h4) as the previous header DOM element
             else if(currentTagName === previousTagName) {
 
-                ul.find(itemClass).last().after(self._nestElements($(this), index, has_parent));
-
+                ul.find(itemClass).last().after(self._nestElements($(this), index));
             }
 
             else {
@@ -504,9 +504,11 @@
                     "data-tag": currentTagName
 
                 })).next(subheaderClass).
-                
+
                 // Appends a list item HTML element to the last unordered list HTML element found within the HTML element calling the plugin
                 append(self._nestElements($(this), index));
+
+                 //ul.find(itemClass).first().append("<span class='sub_header_arrow'></span>");
             }
 
         },
@@ -566,7 +568,6 @@
 
                     // Makes sure the cursor is set to the pointer icon
                     $(this).css("cursor", "pointer");
-
                 },
 
                 // Mouseleave event handler
@@ -582,64 +583,69 @@
                 }
             });
 
+            // only attach handler if needed (expensive in IE)
+            if (self.options.extendPage || self.options.highlightOnScroll || self.options.scrollHistory || self.options.showAndHideOnScroll)
+            {
             // Window scroll event handler
-            $(window).on("scroll.tocify", function() {
+                $(window).on("scroll.tocify", function() {
 
-                // Once all animations on the page are complete, this callback function will be called
-                $("html, body").promise().done(function() {
+                    // Once all animations on the page are complete, this callback function will be called
+                    $("html, body").promise().done(function() {
 
-                    // Local variables
+                        // Local variables
 
-                    // Stores how far the user has scrolled
-                    var winScrollTop = $(window).scrollTop(),
+                        // Stores how far the user has scrolled
+                        var winScrollTop = $(window).scrollTop(),
 
-                        // Stores the height of the window
-                        winHeight = $(window).height(),
+                            // Stores the height of the window
+                            winHeight = $(window).height(),
 
-                        // Stores the height of the document
-                        docHeight = $(document).height(),
+                            // Stores the height of the document
+                            docHeight = $(document).height(),
 
-                        scrollHeight = $("body")[0].scrollHeight,
+                            scrollHeight = $("body")[0].scrollHeight,
 
-                        // Instantiates a variable that will be used to hold a selected HTML element
-                        elem,
+                            // Instantiates a variable that will be used to hold a selected HTML element
+                            elem,
 
-                        lastElem,
+                            lastElem,
 
-                        lastElemOffset,
+                            lastElemOffset,
 
-                        currentElem;
+                            currentElem;
 
-                    if(self.options.extendPage) {
+                        if(self.options.extendPage) {
 
-                        // If the user has scrolled to the bottom of the page and the last toc item is not focused
-                        if((self.webkit && winScrollTop >= scrollHeight - winHeight - self.options.extendPageOffset) || (!self.webkit && winHeight + winScrollTop > docHeight - self.options.extendPageOffset)) {
+                            // If the user has scrolled to the bottom of the page and the last toc item is not focused
+                            if((self.webkit && winScrollTop >= scrollHeight - winHeight - self.options.extendPageOffset) || (!self.webkit && winHeight + winScrollTop > docHeight - self.options.extendPageOffset)) {
 
-                            if(!$(extendPageClass).length) {
+                                if(!$(extendPageClass).length) {
 
-                                lastElem = $('div[data-unique="' + $(itemClass).last().attr("data-unique") + '"]');
+                                    lastElem = $('div[data-unique="' + $(itemClass).last().attr("data-unique") + '"]');
 
-                                if(!lastElem.length) return;
+                                    if(!lastElem.length) return;
 
-                                // Gets the top offset of the page header that is linked to the last toc item
-                                lastElemOffset = lastElem.offset().top;
+                                    // Gets the top offset of the page header that is linked to the last toc item
+                                    lastElemOffset = lastElem.offset().top;
 
-                                // Appends a div to the bottom of the page and sets the height to the difference of the window scrollTop and the last element's position top offset
-                                $(self.options.context).append($("<div />", {
+                                    // Appends a div to the bottom of the page and sets the height to the difference of the window scrollTop and the last element's position top offset
+                                    $(self.options.context).append($("<div />", {
 
-                                    "class": extendPageClassName,
+                                        "class": extendPageClassName,
 
-                                    "height": Math.abs(lastElemOffset - winScrollTop) + "px",
+                                        "height": Math.abs(lastElemOffset - winScrollTop) + "px",
 
-                                    "data-unique": extendPageClassName
+                                        "data-unique": extendPageClassName
 
-                                }));
+                                    }));
 
-                                if(self.extendPageScroll) {
+                                    if(self.extendPageScroll) {
 
-                                    currentElem = self.element.find('li.active');
+                                        currentElem = self.element.find('li.active');
 
-                                    self._scrollTo($("div[data-unique=" + currentElem.attr("data-unique") + "]"));
+                                        self._scrollTo($('div[data-unique="' + currentElem.attr("data-unique") + '"]'));
+
+                                    }
 
                                 }
 
@@ -647,72 +653,71 @@
 
                         }
 
-                    }
+                        // The zero timeout ensures the following code is run after the scroll events
+                        setTimeout(function() {
 
-                    // The zero timeout ensures the following code is run after the scroll events
-                    setTimeout(function() {
+                            // _Local variables_
 
-                        // _Local variables_
+                            // Stores the distance to the closest anchor
+                            var closestAnchorDistance = null,
 
-                        // Stores the distance to the closest anchor
-                        var closestAnchorDistance = null,
+                                // Stores the index of the closest anchor
+                                closestAnchorIdx = null,
 
-                            // Stores the index of the closest anchor
-                            closestAnchorIdx = null,
+                                // Keeps a reference to all anchors
+                                anchors = $(self.options.context).find("div[data-unique]"),
 
-                            // Keeps a reference to all anchors
-                            anchors = $(self.options.context).find("div[data-unique]"),
+                                anchorText;
 
-                            anchorText;
+                            // Determines the index of the closest anchor
+                            anchors.each(function(idx) {
+                                var distance = Math.abs(($(this).next().length ? $(this).next() : $(this)).offset().top - winScrollTop - self.options.highlightOffset);
+                                if (closestAnchorDistance == null || distance < closestAnchorDistance) {
+                                    closestAnchorDistance = distance;
+                                    closestAnchorIdx = idx;
+                                } else {
+                                    return false;
+                                }
+                            });
 
-                        // Determines the index of the closest anchor
-                        anchors.each(function(idx) {
-                            var distance = Math.abs(($(this).next().length ? $(this).next() : $(this)).offset().top - winScrollTop - self.options.highlightOffset);
-                            if (closestAnchorDistance == null || distance < closestAnchorDistance) {
-                                closestAnchorDistance = distance;
-                                closestAnchorIdx = idx;
-                            } else {
-                                return false;
-                            }
-                        });
+                            anchorText = $(anchors[closestAnchorIdx]).attr("data-unique");
 
-                        anchorText = $(anchors[closestAnchorIdx]).attr("data-unique");
+                            // Stores the list item HTML element that corresponds to the currently traversed anchor tag
+                            elem = $('li[data-unique="' + anchorText + '"]');
 
-                        // Stores the list item HTML element that corresponds to the currently traversed anchor tag
-                        elem = $('li[data-unique="' + anchorText + '"]');
+                            // If the `highlightOnScroll` option is true and a next element is found
+                            if(self.options.highlightOnScroll && elem.length) {
 
-                        // If the `highlightOnScroll` option is true and a next element is found
-                        if(self.options.highlightOnScroll && elem.length) {
+                                // Removes highlighting from all of the list item's
+                                self.element.find("." + self.focusClass).removeClass(self.focusClass);
 
-                            // Removes highlighting from all of the list item's
-                            self.element.find("." + self.focusClass).removeClass(self.focusClass);
-
-                            // Highlights the corresponding list item
-                            elem.addClass(self.focusClass);
-
-                        }
-
-                        if(self.options.scrollHistory) {
-
-                            if(window.location.hash !== "#" + anchorText) {
-
-                                window.location.replace("#" + anchorText);
+                                // Highlights the corresponding list item
+                                elem.addClass(self.focusClass);
 
                             }
-                        }
 
-                        // If the `showAndHideOnScroll` option is true
-                        if(self.options.showAndHideOnScroll && self.options.showAndHide) {
+                            if(self.options.scrollHistory) {
 
-                            self._triggerShow(elem, true);
+                                if(window.location.hash !== "#" + anchorText) {
 
-                        }
+                                    window.location.replace("#" + anchorText);
 
-                    }, 0);
+                                }
+                            }
+
+                            // If the `showAndHideOnScroll` option is true
+                            if(self.options.showAndHideOnScroll && self.options.showAndHide) {
+
+                                self._triggerShow(elem, true);
+
+                            }
+
+                        }, 0);
+
+                    });
 
                 });
-
-            });
+            }
 
         },
 
@@ -923,6 +928,7 @@
                 this.hoverClass = tocHoverClassName;
 
             }
+
             //Maintains chainability
             return this;
 
@@ -955,7 +961,14 @@
 
             var self = this,
                 duration = self.options.smoothScroll || 0,
-                scrollTo = self.options.scrollTo;
+                scrollTo = self.options.scrollTo,
+                currentDiv = $('div[data-unique="' + elem.attr("data-unique") + '"]');
+
+            if(!currentDiv.length) {
+
+                return self;
+
+            }
 
             // Once all animations on the page are complete, this callback function will be called
             $("html, body").promise().done(function() {
@@ -964,7 +977,7 @@
                 $("html, body").animate({
 
                     // Sets the jQuery `scrollTop` to the top offset of the HTML div tag that matches the current list item's `data-unique` tag
-                    "scrollTop": $('div[data-unique="' + elem.attr("data-unique") + '"]').offset().top - ($.isFunction(scrollTo) ? scrollTo.call() : scrollTo) + "px"
+                    "scrollTop": currentDiv.offset().top - ($.isFunction(scrollTo) ? scrollTo.call() : scrollTo) + "px"
 
                 }, {
 

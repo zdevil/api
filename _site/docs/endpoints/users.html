@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
     <title>Okta Developers</title>
     
@@ -20,6 +21,7 @@
         <script src="../../assets/js/respond.min.js"></script>
         <![endif]-->
     </head>
+    
     <body data-spy="scroll" data-target="#sidebar">
         <!-- Static navbar -->
         <div class="navbar-wrapper">
@@ -35,6 +37,20 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             
                             
                             
@@ -119,7 +135,23 @@
                             
                             
                             
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             <li><a href="/forum/index.html" data-num="3">Discussions</a></li>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             
                             
                             
@@ -162,44 +194,68 @@
 <div class="container">
 	<div class="side-container">
 		<div class="row row-offcanvas row-offcanvas-right" id="f-wrapper">
-			<div class="col-xs-3 col-md-3" id="sidebar-sdks">
+			<div class="col-xs-12 col-md-3" id="sidebar-sdks">
 				<ul>
 					<li class="h1-toc-depth"><a>Content test</a></li>
 
 								
 								
 								<li class="h2-toc-depth">
-									<a href="/docs/endpoints/users.html" data-position="leftsidebar">Endpoints - Users</a>
+									<a href="/docs/endpoints/apps.html" data-position="leftsidebar">Apps</a>
 								</li>
 								
 								
 								
 								<li class="h2-toc-depth">
-									<a href="/docs/examples/session_cookie.html" data-position="">Session Cookie</a>
+									<a href="/docs/endpoints/events.html" data-position="leftsidebar">Events</a>
 								</li>
 								
 								
 								
 								<li class="h2-toc-depth">
-									<a href="/docs/getting_started/design_principles.html" data-position="">Design Principles</a>
+									<a href="/docs/endpoints/groups.html" data-position="leftsidebar">Endpoints - Groups</a>
 								</li>
 								
 								
 								
 								<li class="h2-toc-depth">
-									<a href="/docs/getting_started/error_codes.html" data-position="">Error Codes</a>
+									<a href="/docs/endpoints/sessions.html" data-position="leftsidebar">Sessions</a>
 								</li>
 								
 								
 								
 								<li class="h2-toc-depth">
-									<a href="/docs/getting_started/getting_a_token.html" data-position="">Getting A Token</a>
+									<a href="/docs/endpoints/tokens.html" data-position="leftsidebar">Tokens</a>
 								</li>
 								
 								
 								
 								<li class="h2-toc-depth">
-									<a href="/docs/sdks/getting_started.html" data-position="">Getting Started</a>
+									<a href="/docs/endpoints/users.html" data-position="leftsidebar">Users</a>
+								</li>
+								
+								
+								
+								<li class="h2-toc-depth">
+									<a href="/docs/examples/session_cookie.html" data-position="leftsidebar">Examples - Sessions Cookie</a>
+								</li>
+								
+								
+								
+								<li class="h2-toc-depth">
+									<a href="/docs/getting_started/design_principles.html" data-position="leftsidebar">Getting Started - Design Principles</a>
+								</li>
+								
+								
+								
+								<li class="h2-toc-depth">
+									<a href="/docs/getting_started/error_codes.html" data-position="leftsidebar">Getting Started - Error Codes</a>
+								</li>
+								
+								
+								
+								<li class="h2-toc-depth">
+									<a href="/docs/getting_started/getting_a_token.html" data-position="leftsidebar">Getting Started - Getting a token</a>
 								</li>
 								
 								
@@ -207,6 +263,10 @@
 								
 								
 								
+								
+								<li class="h2-toc-depth">
+									<a href="/index.html" data-position="">Docs</a>
+								</li>
 								
 								
 								
@@ -227,13 +287,15 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-xs-9 col-md-9" style="background-color:white; border-left: 1px solid #ccc; min-height: 800px;">
+			<div class="col-xs-12 col-md-9" style="background-color:white; border-left: 1px solid #ccc; min-height: 800px;">
 				<div style="margin-left:2%;">
 					<div id="section-">
 						<h1 style="margin-top:20px;">Okta SDKs</h1>
 					</div>
 					
-					<h1 id="toc_0">Overview</h1>
+					<h1 id="toc_0">Users</h1>
+
+<h2 id="toc_1">Overview</h2>
 
 <p>The User API provides operations for user management.</p>
 
@@ -274,8 +336,8 @@
 
 <ul>
 <li><a href="#update-profile">Update Profile</a></li>
-<li><a href="#update-password">Update Password</a></li>
-<li><a href="#update-recovery-question--answer">Update Recovery Question &amp; Answer</a></li>
+<li><a href="#set-password">Set Password</a></li>
+<li><a href="#set-recovery-question--answer">Set Recovery Question &amp; Answer</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#related-resources">Related Resources</a>
@@ -301,7 +363,7 @@
 </ul></li>
 </ul>
 
-<h1 id="toc_1">User Model</h1>
+<h2 id="toc_2">User Model</h2>
 
 <p>Content Type: application/json</p>
 
@@ -312,7 +374,7 @@
 <li><a href="#links-object">Links Object</a></li>
 </ul>
 
-<h2 id="toc_2">Example</h2>
+<h3 id="toc_3">Example</h3>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00ub0oNGTSWTBKOLGLNR&quot;</span><span class="p">,</span>
     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
@@ -352,7 +414,7 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="toc_3">Metadata Attributes</h2>
+<h3 id="toc_4">Metadata Attributes</h3>
 
 <p>The User model defines several <strong><em>read-only</em></strong> attributes:</p>
 
@@ -410,11 +472,11 @@
 
 <p><em>Note: These attributes are only available after a user is created</em></p>
 
-<p><code>activated</code> timestamp will only be avaialble to users created after <em>06/30/2013</em>.</p>
+<p><code>activated</code> timestamp will only be available to users activated after <em>06/30/2013</em>.</p>
 
 <p><code>statusChanged</code> and <code>lastLogin</code> timestamps will be missing for users created before <em>06/30/2013</em>.  They will be updated on next status change or login.</p>
 
-<h2 id="toc_4">Profile Object</h2>
+<h3 id="toc_5">Profile Object</h3>
 
 <p>Specifies standard and custom profile attributes for a user.</p>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
@@ -429,7 +491,7 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="toc_5">Standard Attributes</h3>
+<h4 id="toc_6">Standard Attributes</h4>
 
 <p>All profiles have the following attributes:</p>
 
@@ -491,11 +553,11 @@
 </tr>
 </tbody></table>
 
-<h3 id="toc_6">Custom Attributes</h3>
+<h4 id="toc_7">Custom Attributes</h4>
 
 <p>Custom attributes may be added to a user profile.  Custom attributes must be single-value (non-array) and have a data type of <code>Number</code>, <code>String</code>, <code>Boolean</code>, or <code>null</code>.</p>
 
-<h2 id="toc_7">Credentials Object</h2>
+<h3 id="toc_8">Credentials Object</h3>
 
 <p>Specifies credentials for a user.  Credential types and requirements vary depending on the operation and security policy of the organization.</p>
 
@@ -541,7 +603,7 @@
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="toc_8">Password Object</h3>
+<h4 id="toc_9">Password Object</h4>
 
 <p>Specifies a password for a user.  A password value is a <strong>write-only</strong> property.  When a user has a valid password and a response object contains a password credential, then the Password Object will be a bare object without the <code>value</code> property defined (e.g. <code>password: {}</code>) to indicate that a password value exists.</p>
 
@@ -567,7 +629,7 @@
 </tr>
 </tbody></table>
 
-<h3 id="toc_9">Recovery Question Object</h3>
+<h4 id="toc_10">Recovery Question Object</h4>
 
 <p>Specifies a secret question and answer that is validated when a user forgets their password.  The answer property is <strong>write-only</strong>.</p>
 
@@ -602,7 +664,7 @@
 </tr>
 </tbody></table>
 
-<h2 id="toc_10">Links Object</h2>
+<h3 id="toc_11">Links Object</h3>
 
 <p>Specifies link relations (See <a href="http://tools.ietf.org/html/rfc5988">Web Linking</a>) available for the current status of a user.  The Links Object is used for dynamic discovery of related resources and lifecycle or credential operations.  The Links Object is <strong>read-only</strong>.</p>
 
@@ -646,15 +708,15 @@
 </tr>
 </tbody></table>
 
-<h1 id="toc_11">User Operations</h1>
+<h2 id="toc_12">User Operations</h2>
 
-<h2 id="toc_12">Create User</h2>
+<h3 id="toc_13">Create User</h3>
 
 <p>Creates a new user in your Okta organization.</p>
 
-<h3 id="toc_13">POST /users</h3>
+<h4 id="toc_14">POST /users</h4>
 
-<h4 id="toc_14">Request Parameters</h4>
+<h5 id="toc_15">Request Parameters</h5>
 
 <table><thead>
 <tr>
@@ -701,7 +763,7 @@
 <li><a href="#create-user-with-password--recovery-question">Create User with Password &amp; Recovery Question</a></li>
 </ul>
 
-<h4 id="toc_15">Response Parameters</h4>
+<h5 id="toc_16">Response Parameters</h5>
 
 <p>All responses return the created <a href="#user-model">User</a>.  Activation of a user is an asynchronous operation.  The user will have the <code>transitioningToStatus</code> property with a value of <strong>ACTIVE</strong> during activation to indicate that the user hasn&#39;t completed the asynchronous operation.  The user will have a <code>status</code> of <strong>ACTIVE</strong> when the activation process is complete.</p>
 
@@ -783,13 +845,13 @@
 </tr>
 </tbody></table>
 
-<h3 id="toc_16">Create User without Credentials</h3>
+<h4 id="toc_17">Create User without Credentials</h4>
 
-<h4 id="toc_17">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X POST https://your-domain.okta.com/api/v1/users?activate<span class="o">=</span><span class="nb">false</span> <span class="se">\</span>
+<h5 id="toc_18">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X POST <span class="s2">&quot;https://your-domain.okta.com/api/v1/users?activate=false&quot;</span> <span class="se">\</span>
 -d <span class="se">\</span>
 <span class="s1">&#39;{</span>
 <span class="s1">  &quot;profile&quot;: {</span>
@@ -801,7 +863,7 @@
 <span class="s1">  }</span>
 <span class="s1">}&#39;</span>
 </code></pre></div>
-<h4 id="toc_18">Response</h4>
+<h5 id="toc_19">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00u1ero7vZFVEIYLWPBN&quot;</span><span class="p">,</span>
     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;STAGED&quot;</span><span class="p">,</span>
@@ -824,13 +886,13 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="toc_19">Create User with Recovery Question</h3>
+<h4 id="toc_20">Create User with Recovery Question</h4>
 
-<h4 id="toc_20">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X POST https://your-domain.okta.com/api/v1/users?activate<span class="o">=</span><span class="nb">false</span> <span class="se">\</span>
+<h5 id="toc_21">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X POST <span class="s2">&quot;https://your-domain.okta.com/api/v1/users?activate=false&quot;</span> <span class="se">\</span>
 -d <span class="se">\</span>
 <span class="s1">&#39;{</span>
 <span class="s1">  &quot;profile&quot;: {</span>
@@ -848,7 +910,7 @@
 <span class="s1">  }</span>
 <span class="s1">}&#39;</span>
 </code></pre></div>
-<h4 id="toc_21">Response</h4>
+<h5 id="toc_22">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00u1ero7vZFVEIYLWPBN&quot;</span><span class="p">,</span>
     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;STAGED&quot;</span><span class="p">,</span>
@@ -875,13 +937,13 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="toc_22">Create User with Password</h3>
+<h4 id="toc_23">Create User with Password</h4>
 
-<h4 id="toc_23">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X POST https://your-domain.okta.com/api/v1/users?activate<span class="o">=</span><span class="nb">false</span> <span class="se">\</span>
+<h5 id="toc_24">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X POST <span class="s2">&quot;https://your-domain.okta.com/api/v1/users?activate=false&quot;</span> <span class="se">\</span>
 -d <span class="se">\</span>
 <span class="s1">&#39;{</span>
 <span class="s1">  &quot;profile&quot;: {</span>
@@ -896,7 +958,7 @@
 <span class="s1">  }</span>
 <span class="s1">}&#39;</span>
 </code></pre></div>
-<h4 id="toc_24">Response</h4>
+<h5 id="toc_25">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00u1ero7vZFVEIYLWPBN&quot;</span><span class="p">,</span>
     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;STAGED&quot;</span><span class="p">,</span>
@@ -921,13 +983,13 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="toc_25">Create User with Password &amp; Recovery Question</h3>
+<h4 id="toc_26">Create User with Password &amp; Recovery Question</h4>
 
-<h4 id="toc_26">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X POST https://your-domain.okta.com/api/v1/users?activate<span class="o">=</span><span class="nb">false</span> <span class="se">\</span>
+<h5 id="toc_27">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X POST <span class="s2">&quot;https://your-domain.okta.com/api/v1/users?activate=false&quot;</span> <span class="se">\</span>
 -d <span class="se">\</span>
 <span class="s1">&#39;{</span>
 <span class="s1">  &quot;profile&quot;: {</span>
@@ -946,7 +1008,7 @@
 <span class="s1">  }</span>
 <span class="s1">}&#39;</span>
 </code></pre></div>
-<h4 id="toc_27">Response</h4>
+<h5 id="toc_28">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00u1ero7vZFVEIYLWPBN&quot;</span><span class="p">,</span>
     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;STAGED&quot;</span><span class="p">,</span>
@@ -973,13 +1035,13 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="toc_28">Get User</h2>
+<h3 id="toc_29">Get User</h3>
 
 <p>Fetches a user from your Okta organization</p>
 
-<h3 id="toc_29">GET /users/:id</h3>
+<h4 id="toc_30">GET /users/:id</h4>
 
-<h4 id="toc_30">Request Parameters</h4>
+<h5 id="toc_31">Request Parameters</h5>
 
 <p>Fetch a specific user by id, login, or login shortname (as long as it is unambiguous).</p>
 
@@ -1003,19 +1065,19 @@
 </tr>
 </tbody></table>
 
-<h4 id="toc_31">Response Parameters</h4>
+<h5 id="toc_32">Response Parameters</h5>
 
 <p>Fetched <a href="#user-model">User</a></p>
 
-<h3 id="toc_32">Get User with id</h3>
+<h4 id="toc_33">Get User with id</h4>
 
-<h4 id="toc_33">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X GET https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR 
+<h5 id="toc_34">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X GET <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR&quot;</span>
 </code></pre></div>
-<h4 id="toc_34">Response</h4>
+<h5 id="toc_35">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00ub0oNGTSWTBKOLGLNR&quot;</span><span class="p">,</span>
     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
@@ -1055,15 +1117,15 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="toc_35">Get User with login</h3>
+<h4 id="toc_36">Get User with login</h4>
 
-<h4 id="toc_36">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X GET https://your-domain.okta.com/api/v1/users/isaac@example.org
+<h5 id="toc_37">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X GET <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/isaac@example.org&quot;</span>
 </code></pre></div>
-<h4 id="toc_37">Response</h4>
+<h5 id="toc_38">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00ub0oNGTSWTBKOLGLNR&quot;</span><span class="p">,</span>
     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
@@ -1103,15 +1165,15 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="toc_38">Get User with login shortname</h3>
+<h4 id="toc_39">Get User with login shortname</h4>
 
-<h4 id="toc_39">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X GET https://your-domain.okta.com/api/v1/users/isaac
+<h5 id="toc_40">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X GET <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/isaac&quot;</span>
 </code></pre></div>
-<h4 id="toc_40">Response</h4>
+<h5 id="toc_41">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00ub0oNGTSWTBKOLGLNR&quot;</span><span class="p">,</span>
     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
@@ -1151,13 +1213,13 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="toc_41">List Users</h2>
+<h3 id="toc_42">List Users</h3>
 
-<h3 id="toc_42">GET /users</h3>
+<h4 id="toc_43">GET /users</h4>
 
 <p>Fetch a list of users from your Okta organization.</p>
 
-<h4 id="toc_43">Request Parameters</h4>
+<h5 id="toc_44">Request Parameters</h5>
 
 <table><thead>
 <tr>
@@ -1197,19 +1259,19 @@
 
 <p><em>Note: Search currently performs a startsWith match but it should be considered an implementation detail and may change without notice in the future</em></p>
 
-<h4 id="toc_44">Response Parameters</h4>
+<h5 id="toc_45">Response Parameters</h5>
 
 <p>Array of <a href="#user-model">User</a></p>
 
-<h3 id="toc_45">List Users with Defaults</h3>
+<h4 id="toc_46">List Users with Defaults</h4>
 
-<h4 id="toc_46">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X GET https://your-domain.okta.com/api/v1/users 
+<h5 id="toc_47">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X GET <span class="s2">&quot;https://your-domain.okta.com/api/v1/users&quot;</span>
 </code></pre></div>
-<h4 id="toc_47">Response</h4>
+<h5 id="toc_48">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">[</span>
     <span class="p">{</span>
         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00u1ero7vZFVEIYLWPBN&quot;</span><span class="p">,</span>
@@ -1272,15 +1334,15 @@
     <span class="p">}</span>    
 <span class="p">]</span>
 </code></pre></div>
-<h3 id="toc_48">List Users with Search</h3>
+<h4 id="toc_49">List Users with Search</h4>
 
-<h4 id="toc_49">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X GET https://your-domain.okta.com/api/v1/users?q<span class="o">=</span>er&amp;limit<span class="o">=</span>1
+<h5 id="toc_50">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X GET <span class="s2">&quot;https://your-domain.okta.com/api/v1/users?q=er&amp;limit=1&quot;</span>
 </code></pre></div>
-<h4 id="toc_50">Response</h4>
+<h5 id="toc_51">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">[</span>
     <span class="p">{</span>
         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00uar9CIHZHPTVFRSEYZ&quot;</span><span class="p">,</span>
@@ -1322,15 +1384,15 @@
     <span class="p">}</span>    
 <span class="p">]</span>
 </code></pre></div>
-<h3 id="toc_51">List Users with Status (Filter)</h3>
+<h4 id="toc_52">List Users with Status (Filter)</h4>
 
-<h4 id="toc_52">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X GET https://your-domain.okta.com/api/v1/users?filter<span class="o">=</span>status+eq+<span class="se">\&quot;</span>ACTIVE<span class="se">\&quot;</span>
+<h5 id="toc_53">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X GET <span class="s2">&quot;https://your-domain.okta.com/api/v1/users?filter=status+eq+\&quot;ACTIVE\&quot;&quot;</span>
 </code></pre></div>
-<h4 id="toc_53">Response</h4>
+<h5 id="toc_54">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">[</span>
     <span class="p">{</span>
         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00uar9CIHZHPTVFRSEYZ&quot;</span><span class="p">,</span>
@@ -1372,13 +1434,13 @@
     <span class="p">}</span>    
 <span class="p">]</span>
 </code></pre></div>
-<h2 id="toc_54">Update User</h2>
+<h3 id="toc_55">Update User</h3>
 
-<h3 id="toc_55">PUT /users/:id</h3>
+<h4 id="toc_56">PUT /users/:id</h4>
 
 <p>Update a user&#39;s profile and/or credentials.</p>
 
-<h4 id="toc_56">Request Parameters</h4>
+<h5 id="toc_57">Request Parameters</h5>
 
 <table><thead>
 <tr>
@@ -1420,17 +1482,17 @@
 
 <p><em>Note: All profile attributes must be specified when updating a user&#39;s profile.  <strong>Partial updates are not supported!</strong></em></p>
 
-<h4 id="toc_57">Response Parameters</h4>
+<h5 id="toc_58">Response Parameters</h5>
 
 <p>Updated <a href="#user-model">User</a></p>
 
-<h3 id="toc_58">Update Profile</h3>
+<h4 id="toc_59">Update Profile</h4>
 
-<h4 id="toc_59">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X PUT https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR <span class="se">\</span>
+<h5 id="toc_60">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X PUT <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR&quot;</span> <span class="se">\</span>
 -d <span class="se">\</span>
 <span class="s1">&#39;{</span>
 <span class="s1">    &quot;profile&quot;: {</span>
@@ -1443,7 +1505,7 @@
 <span class="s1">    }</span>
 <span class="s1">}&#39;</span>
 </code></pre></div>
-<h4 id="toc_60">Response</h4>
+<h5 id="toc_61">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00ub0oNGTSWTBKOLGLNR&quot;</span><span class="p">,</span>
     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
@@ -1484,7 +1546,7 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="toc_61">Update Password</h3>
+<h4 id="toc_62">Set Password</h4>
 
 <p>This is an administrative operation and does not validate existing user credentials.  For operations that validate credentials refer to:</p>
 
@@ -1494,11 +1556,11 @@
 <li><a href="#change-password">Change Password</a></li>
 </ul>
 
-<h4 id="toc_62">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X PUT https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR <span class="se">\</span>
+<h5 id="toc_63">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X PUT <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR&quot;</span> <span class="se">\</span>
 -d <span class="se">\</span>
 <span class="s1">&#39;{</span>
 <span class="s1">  &quot;credentials&quot;: {</span>
@@ -1506,7 +1568,7 @@
 <span class="s1">  }</span>
 <span class="s1">}&#39;</span>
 </code></pre></div>
-<h4 id="toc_63">Response</h4>
+<h5 id="toc_64">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00ub0oNGTSWTBKOLGLNR&quot;</span><span class="p">,</span>
     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
@@ -1546,15 +1608,15 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="toc_64">Update Recovery Question &amp; Answer</h3>
+<h4 id="toc_65">Set Recovery Question &amp; Answer</h4>
 
 <p>This is an administrative operation and does not validate existing user credentials.  See <a href="#change-recovery-question">Change Recovery Question</a> for an operation that requires validation</p>
 
-<h4 id="toc_65">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X PUT https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR <span class="se">\</span>
+<h5 id="toc_66">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X PUT <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR&quot;</span> <span class="se">\</span>
 -d <span class="se">\</span>
 <span class="s1">&#39;{</span>
 <span class="s1">  &quot;credentials&quot;: {</span>
@@ -1565,7 +1627,7 @@
 <span class="s1">  }</span>
 <span class="s1">}&#39;</span>
 </code></pre></div>
-<h4 id="toc_66">Response</h4>
+<h5 id="toc_67">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;00ub0oNGTSWTBKOLGLNR&quot;</span><span class="p">,</span>
     <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
@@ -1605,15 +1667,15 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h1 id="toc_67">Related Resources</h1>
+<h2 id="toc_68">Related Resources</h2>
 
-<h2 id="toc_68">Get Assigned App Links</h2>
+<h3 id="toc_69">Get Assigned App Links</h3>
 
-<h3 id="toc_69">GET /users/:id/appLinks</h3>
+<h4 id="toc_70">GET /users/:id/appLinks</h4>
 
 <p>Fetches appLinks for all direct or indirect (via group membership) assigned applications</p>
 
-<h4 id="toc_70">Request Parameters</h4>
+<h5 id="toc_71">Request Parameters</h5>
 
 <table><thead>
 <tr>
@@ -1635,17 +1697,17 @@
 </tr>
 </tbody></table>
 
-<h4 id="toc_71">Response Type</h4>
+<h5 id="toc_72">Response Type</h5>
 
 <p>Array of App Links</p>
 
-<h4 id="toc_72">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X GET https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/appLinks 
+<h5 id="toc_73">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X GET <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/appLinks&quot;</span>
 </code></pre></div>
-<h4 id="toc_73">Response</h4>
+<h5 id="toc_74">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">[</span>
     <span class="p">{</span>
         <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Google Apps Mail&quot;</span><span class="p">,</span>
@@ -1693,13 +1755,13 @@
     <span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
-<h2 id="toc_74">Get Member Groups</h2>
+<h3 id="toc_75">Get Member Groups</h3>
 
-<h3 id="toc_75">GET /users/:id/groups</h3>
+<h4 id="toc_76">GET /users/:id/groups</h4>
 
 <p>Fetches the groups of which the user is a member.</p>
 
-<h4 id="toc_76">Request Parameters</h4>
+<h5 id="toc_77">Request Parameters</h5>
 
 <table><thead>
 <tr>
@@ -1721,15 +1783,15 @@
 </tr>
 </tbody></table>
 
-<h4 id="toc_77">Response Type</h4>
+<h5 id="toc_78">Response Type</h5>
 
-<h4 id="toc_78">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X GET https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/groups 
+<h5 id="toc_79">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X GET <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/groups&quot;</span> 
 </code></pre></div>
-<h4 id="toc_79">Response</h4>
+<h5 id="toc_80">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">[</span>
   <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;0gabcd1234&quot;</span><span class="p">,</span> 
@@ -1747,17 +1809,19 @@
   <span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
-<h1 id="toc_80">Lifecycle Operations</h1>
+<h2 id="toc_81">Lifecycle Operations</h2>
 
-<h2 id="toc_81">Activate User</h2>
+<p>Lifecycle operations are non-idempotent operations that initiate a state transition for a user&#39;s status.  Some operations are asynchronous while others are synchronous.  The user&#39;s current status limits what operations are allowed.  For example, you can&#39;t unlock a user that is <code>ACTIVE</code>.</p>
 
-<h4 id="toc_82">POST /users/:id/lifecycle/activate</h4>
+<h3 id="toc_82">Activate User</h3>
+
+<h5 id="toc_83">POST /users/:id/lifecycle/activate</h5>
 
 <p>Activates a user.  This operation can only be performed on users with a <strong>STAGED</strong> <code>status</code>.  Activation of a user is an asynchronous operation.  The user will have the <code>transitioningToStatus</code> property with a value of <strong>ACTIVE</strong> during activation to indicate that the user hasn&#39;t completed the asynchronous operation.  The user will have a <code>status</code> of <strong>ACTIVE</strong> when the activation process is complete.</p>
 
 <p><em>Note: Users that do not have a password must complete the welcome flow by visiting the activation link to complete the transition to <strong>ACTIVE</strong> status.</em></p>
 
-<h4 id="toc_83">Request Parameters</h4>
+<h5 id="toc_84">Request Parameters</h5>
 
 <table><thead>
 <tr>
@@ -1787,7 +1851,7 @@
 </tr>
 </tbody></table>
 
-<h4 id="toc_84">Response Parameters</h4>
+<h5 id="toc_85">Response Parameters</h5>
 
 <p>Returns empty object by default. When <code>sendEmail</code> is <code>false</code>, returns an activation link for the user to set up their account.</p>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
@@ -1796,26 +1860,26 @@
 </code></pre></div>
 <p><em>Note: If a password was set before the user was activated, then user must login with with their password and not the activation link</em></p>
 
-<h4 id="toc_85">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/activate?sendEmail<span class="o">=</span><span class="nb">false</span>
+<h5 id="toc_86">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X POST <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/activate?sendEmail=false&quot;</span>
 </code></pre></div>
-<h4 id="toc_86">Response</h4>
+<h5 id="toc_87">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;activationUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;https://your-domain.okta.com/welcome/XE6wE17zmphl3KqAPFxO&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="toc_87">Deactivate User</h2>
+<h3 id="toc_88">Deactivate User</h3>
 
-<h4 id="toc_88">POST /users/:id/lifecycle/deactivate</h4>
+<h5 id="toc_89">POST /users/:id/lifecycle/deactivate</h5>
 
 <p>Deactivates a user.  This operation can only be performed on users that do not have a <strong>DEPROVISIONED</strong> <code>status</code>.  Deactivation of a user is an asynchronous operation.  The user will have the <code>transitioningToStatus</code> property with a value of <strong>DEPROVISIONED</strong> during deactivation to indicate that the user hasn&#39;t completed the asynchronous operation.  The user will have a <code>status</code> of <strong>DEPROVISIONED</strong> when the deactivation process is complete.</p>
 
 <p><em>Note: Deactivating a user is a <strong>destructive</strong> operation.  The user will be deprovisioned from all assigned applications which may destroy their data such as email or files.  <strong>This action cannot be recovered!</strong></em></p>
 
-<h4 id="toc_89">Request Parameters</h4>
+<h5 id="toc_90">Request Parameters</h5>
 
 <table><thead>
 <tr>
@@ -1837,23 +1901,25 @@
 </tr>
 </tbody></table>
 
-<h4 id="toc_90">Response Parameters</h4>
+<h5 id="toc_91">Response Parameters</h5>
 
 <p>Returns an empty object</p>
 
-<h4 id="toc_91">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/deactivate
+<h5 id="toc_92">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X POST <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/deactivate&quot;</span>
 </code></pre></div>
-<h2 id="toc_92">Unlock User</h2>
+<h3 id="toc_93">Unlock User</h3>
 
-<h4 id="toc_93">POST /users/:id/lifecycle/unlock</h4>
+<h5 id="toc_94">POST /users/:id/lifecycle/unlock</h5>
 
 <p>Unlocks a user with a <strong>LOCKED_OUT</strong> status and returns them to <strong>ACTIVE</strong> <code>status</code>.  Users will be able to login with their current password.</p>
 
-<h4 id="toc_94">Request Parameters</h4>
+<p><em>Note: This operation currently only works with Okta-mastered users and does not support directory-mastered accounts such as Active Directory.</em></p>
+
+<h5 id="toc_95">Request Parameters</h5>
 
 <table><thead>
 <tr>
@@ -1875,23 +1941,25 @@
 </tr>
 </tbody></table>
 
-<h4 id="toc_95">Response Parameters</h4>
+<h5 id="toc_96">Response Parameters</h5>
 
 <p>Returns an empty object</p>
 
-<h4 id="toc_96">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/unlock
+<h5 id="toc_97">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X POST <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/unlock&quot;</span>
 </code></pre></div>
-<h2 id="toc_97">Reset Password</h2>
+<h3 id="toc_98">Reset Password</h3>
 
-<h3 id="toc_98">POST /users/:id/lifecycle/reset_password</h3>
+<h4 id="toc_99">POST /users/:id/lifecycle/reset_password</h4>
 
-<p>Resets the password for a user. The user will transition to the <code>status</code> of <strong>RECOVERY</strong> and will not be able to login until they complete the reset flow.</p>
+<p>Generates a one-time token (OTT) that can be used to reset a user&#39;s password.  The OTT link can be automatically emailed to the user or returned to the API caller and distributed using a custom flow.</p>
 
-<h4 id="toc_99">Request Parameters</h4>
+<p>This operation will transition the user to the <code>status</code> of <strong>RECOVERY</strong> and the user will not be able to login or initiate a forgot password flow until they complete the reset flow.</p>
+
+<h5 id="toc_100">Request Parameters</h5>
 
 <table><thead>
 <tr>
@@ -1921,33 +1989,33 @@
 </tr>
 </tbody></table>
 
-<h4 id="toc_100">Response Parameters</h4>
+<h5 id="toc_101">Response Parameters</h5>
 
 <p>Returns an empty object by default. When <code>sendEmail</code> is <code>false</code>, returns a link for the user to reset their password.</p>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;resetPasswordUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;https://your-domain.okta.com/reset_password/XE6wE17zmphl3KqAPFxO&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h4 id="toc_101">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/reset_password?sendEmail<span class="o">=</span><span class="nb">false</span>
+<h5 id="toc_102">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X POST <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/reset_password?sendEmail=false&quot;</span>
 </code></pre></div>
-<h4 id="toc_102">Response</h4>
+<h5 id="toc_103">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;resetPasswordUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;https://your-domain.okta.com/reset_password/XE6wE17zmphl3KqAPFxO&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h1 id="toc_103">Credential Operations</h1>
+<h2 id="toc_104">Credential Operations</h2>
 
-<h2 id="toc_104">Forgot Password</h2>
+<h3 id="toc_105">Forgot Password</h3>
 
-<h3 id="toc_105">POST /users/:id/lifecycle/forgot_password</h3>
+<h4 id="toc_106">POST /users/:id/lifecycle/forgot_password</h4>
 
-<p>Generates a one-time token that can be used to reset a user&#39;s password.  The user will be required to validate their security question&#39;s answer when visiting the reset link.  This operation can only be performed on users in <strong>ACTIVE</strong> or <strong>RECOVERY</strong> <code>status</code> that have a valid <a href="#recovery-question-object">recovery question credential</a></p>
+<p>Generates a one-time token (OTT) that can be used to reset a user&#39;s password.  The user will be required to validate their security question&#39;s answer when visiting the reset link.  This operation can only be performed on users with a valid <a href="#recovery-question-object">recovery question credential</a> and have an <strong>ACTIVE</strong> <code>status</code>.</p>
 
-<h4 id="toc_106">Request Parameters</h4>
+<h5 id="toc_107">Request Parameters</h5>
 
 <table><thead>
 <tr>
@@ -1977,7 +2045,7 @@
 </tr>
 </tbody></table>
 
-<h4 id="toc_107">Response Parameters</h4>
+<h5 id="toc_108">Response Parameters</h5>
 
 <p>Returns an empty object by default. When <code>sendEmail</code> is <code>false</code>, returns a link for the user to reset their password. </p>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
@@ -1986,22 +2054,24 @@
 </code></pre></div>
 <p><em>Note: This operation does not affect the status of the user.</em></p>
 
-<h4 id="toc_108">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/forgot_password?sendEmail<span class="o">=</span><span class="nb">false</span>
+<h5 id="toc_109">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X POST <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/lifecycle/forgot_password?sendEmail=false&quot;</span>
 </code></pre></div>
-<h4 id="toc_109">Response</h4>
+<h5 id="toc_110">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;resetPasswordUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;https://your-domain.okta.com/reset_password/XE6wE17zmphl3KqAPFxO&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="toc_110">POST /users/:id/credentials/forgot_password</h3>
+<h4 id="toc_111">POST /users/:id/credentials/forgot_password</h4>
 
-<p>Sets a new password for a user by validating the user&#39;s answer to their current recovery question.  This operation can only be performed on users in <strong>ACTIVE</strong> or <strong>RECOVERY</strong> <code>status</code> that have a valid <a href="#recovery-question-object">recovery question credential</a></p>
+<p>Sets a new password for a user by validating the user&#39;s answer to their current recovery question.  This operation can only be performed on users with a valid <a href="#recovery-question-object">recovery question credential</a> and have an <strong>ACTIVE</strong> <code>status</code>.</p>
 
-<h4 id="toc_111">Request Parameters</h4>
+<p><em>Note: This operation is intended for applications that need to implement their own forgot password flow.  You are responsible for mitigation of all security risks such as phishing and replay attacks.  Best-practice is to generate a short-lived one-time token (OTT) that is sent to a verified email account.</em></p>
+
+<h5 id="toc_112">Request Parameters</h5>
 
 <table><thead>
 <tr>
@@ -2039,24 +2109,24 @@
 </tr>
 </tbody></table>
 
-<h4 id="toc_112">Response Parameters</h4>
+<h5 id="toc_113">Response Parameters</h5>
 
 <p><a href="#credentials-object">Credentials</a> of the user</p>
 
-<p><em>Note: The user will transition to <strong>ACTIVE</strong> status when successfully invoked in <strong>RECOVERY</strong> status</em></p>
+<p><em>Note: This operation does not affect the status of the user.</em></p>
 
-<h4 id="toc_113">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/forgot_password <span class="se">\</span>
+<h5 id="toc_114">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X POST <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/forgot_password&quot;</span> <span class="se">\</span>
 -d <span class="se">\</span>
 <span class="s1">&#39;{</span>
 <span class="s1">    &quot;password&quot;: { &quot;value&quot;: &quot;MyN3wP@55w0rd&quot; }, </span>
 <span class="s1">    &quot;recovery_question&quot;: { &quot;answer&quot;: &quot;Cowboy Dan&quot; } </span>
 <span class="s1">}&#39;</span>
 </code></pre></div>
-<h4 id="toc_114">Response</h4>
+<h5 id="toc_115">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;credentials&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="p">{},</span>
@@ -2066,13 +2136,13 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="toc_115">Change Password</h2>
+<h3 id="toc_116">Change Password</h3>
 
-<h3 id="toc_116">POST /users/:id/credentials/change_password</h3>
+<h4 id="toc_117">POST /users/:id/credentials/change_password</h4>
 
 <p>Changes a user&#39;s password by validating the user&#39;s current password.  This operation can only be performed on users in <strong>STAGED</strong>, <strong>ACTIVE</strong> or <strong>RECOVERY</strong> <code>status</code> that have a valid <a href="#password-object">password credential</a></p>
 
-<h4 id="toc_117">Request Parameters</h4>
+<h5 id="toc_118">Request Parameters</h5>
 
 <table><thead>
 <tr>
@@ -2110,24 +2180,24 @@
 </tr>
 </tbody></table>
 
-<h4 id="toc_118">Response Parameters</h4>
+<h5 id="toc_119">Response Parameters</h5>
 
 <p><a href="#credentials-object">Credentials</a> of the user</p>
 
 <p><em>Note: The user will transition to <strong>ACTIVE</strong> status when successfully invoked in <strong>RECOVERY</strong> status</em></p>
 
-<h4 id="toc_119">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/change_password <span class="se">\</span>
+<h5 id="toc_120">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X POST <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/change_password&quot;</span> <span class="se">\</span>
 -d <span class="se">\</span>
 <span class="s1">&#39;{</span>
 <span class="s1">    &quot;oldPassword&quot;: { &quot;value&quot;: &quot;GoAw@y123&quot; },</span>
 <span class="s1">    &quot;newPassword&quot;: { &quot;value&quot;: &quot;MyN3wP@55w0rd&quot; } </span>
 <span class="s1">}&#39;</span>
 </code></pre></div>
-<h4 id="toc_120">Response</h4>
+<h5 id="toc_121">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;credentials&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="p">{},</span>
@@ -2137,13 +2207,13 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="toc_121">Change Recovery Question</h2>
+<h3 id="toc_122">Change Recovery Question</h3>
 
-<h3 id="toc_122">POST /users/:id/credentials/change_recovery_question</h3>
+<h4 id="toc_123">POST /users/:id/credentials/change_recovery_question</h4>
 
 <p>Changes a user&#39;s recovery question &amp; answer credential by validating the user&#39;s current password.  This operation can only be performed on users in <strong>STAGED</strong>, <strong>ACTIVE</strong> or <strong>RECOVERY</strong> <code>status</code> that have a valid <a href="#password-object">password credential</a></p>
 
-<h4 id="toc_123">Request Parameters</h4>
+<h5 id="toc_124">Request Parameters</h5>
 
 <table><thead>
 <tr>
@@ -2181,17 +2251,17 @@
 </tr>
 </tbody></table>
 
-<h4 id="toc_124">Response Parameters</h4>
+<h5 id="toc_125">Response Parameters</h5>
 
 <p><a href="#credentials-object">Credentials</a> of the user</p>
 
 <p><em>Note: This operation does not affect the status of the user.</em></p>
 
-<h4 id="toc_125">Request</h4>
-<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization:SSWS yourtoken&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Accept:application/json&quot;</span> <span class="se">\</span>
--H <span class="s2">&quot;Content-type:application/json&quot;</span> <span class="se">\</span>
--X POST https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/change_recovery_question <span class="se">\</span>
+<h5 id="toc_126">Request</h5>
+<div class="highlight"><pre><code class="sh language-sh" data-lang="sh">curl -v -H <span class="s2">&quot;Authorization: SSWS yourtoken&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/json&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+-X POST <span class="s2">&quot;https://your-domain.okta.com/api/v1/users/00ub0oNGTSWTBKOLGLNR/credentials/change_recovery_question&quot;</span> <span class="se">\</span>
 -d <span class="se">\</span>
 <span class="s1">&#39;{</span>
 <span class="s1">    &quot;password&quot;: { &quot;value&quot;: &quot;GoAw@y123&quot; }, </span>
@@ -2201,7 +2271,7 @@
 <span class="s1">    } </span>
 <span class="s1">}&#39;</span>
 </code></pre></div>
-<h4 id="toc_126">Response</h4>
+<h5 id="toc_127">Response</h5>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;credentials&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="p">{},</span>

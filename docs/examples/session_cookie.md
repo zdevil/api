@@ -1,14 +1,16 @@
 ---
 layout: sdks
-title: Session Cookie
+title: Examples - Sessions Cookie
 category : Examples
-tagline: "Session Cookie"
-tags : [Session, Cookie, examples]
-icon: "glyphicon glyphicon-user"
-priority: 3
+tagline: "Examples - Sessions Cookie"
+tags : [endpoints, sessions Cookie]
+icon: "glyphicon glyphicon-sessions"
+position: leftsidebar
+priority: 2
 ---
 
-# Retrieving a session cookie with a hidden image
+# Sessions Cookie
+## Retrieving a session cookie with a hidden image
 
 The session creation endpoint allows you to create a session and optionally include a 
 one-time token URL in the response which will allow you to get a cookie for that session
@@ -16,6 +18,7 @@ one-time token URL in the response which will allow you to get a cookie for that
  information on this endpoint.)
 
 Request:
+
 POST https://your-subdomain.okta.com/api/v1/sessions?additionalFields=cookieTokenUrl
 
 ```json
@@ -24,6 +27,7 @@ POST https://your-subdomain.okta.com/api/v1/sessions?additionalFields=cookieToke
  	"password" : "mypassword"
 }
 ``` 
+
 Response:
 
 ```json

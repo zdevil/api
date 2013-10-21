@@ -1,11 +1,12 @@
 ---
 layout: sdks
-title: Error Codes
+title: Getting Started - Error Codes
 category : Getting Started
-tagline: "Error Codes"
-tags : [getting started, error, codes]
-icon: "glyphicon glyphicon-user"
-priority: 5
+tagline: "Getting Started - Error Codes"
+tags : [getting stated, error codes]
+icon: "glyphicon glyphicon-error"
+position: leftsidebar
+priority: 1
 ---
 
 # Error Codes

@@ -51,3 +51,18 @@ kramdown:
 
 redcloth:
   hard_breaks: true
+
+sitemap:
+  filename: "/site-map.xml"
+
+folder_priority:
+- text: Getting Started
+  weight: 1
+- text: Endpoints
+  weight: 2
+- text: Examples
+  weight: 3
+
+
+
+
