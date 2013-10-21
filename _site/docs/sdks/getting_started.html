@@ -307,18 +307,15 @@
 						<h1 style="margin-top:20px;">Okta SDKs</h1>
 					</div>
 					
-					<h1 id="toc_0">Sessions Cookie</h1>
-
-<h2 id="toc_1">Retrieving a session cookie with a hidden image</h2>
+					<h1 id="toc_0">Getting Started</h1>
 
 <p>The session creation endpoint allows you to create a session and optionally include a 
 one-time token URL in the response which will allow you to get a cookie for that session
  in the browser. (See the <a href="/docs/endpoints/sessions.md">Sessions documentation</a> for more 
  information on this endpoint.)</p>
 
-<p>Request:</p>
-
-<p>POST <a href="https://your-subdomain.okta.com/api/v1/sessions?additionalFields=cookieTokenUrl">https://your-subdomain.okta.com/api/v1/sessions?additionalFields=cookieTokenUrl</a></p>
+<p>Request:
+POST <a href="https://your-subdomain.okta.com/api/v1/sessions?additionalFields=cookieTokenUrl">https://your-subdomain.okta.com/api/v1/sessions?additionalFields=cookieTokenUrl</a></p>
 <div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;username&quot;</span> <span class="p">:</span> <span class="s2">&quot;jsmith@mycompany.com&quot;</span><span class="p">,</span>
     <span class="nt">&quot;password&quot;</span> <span class="p">:</span> <span class="s2">&quot;mypassword&quot;</span>
