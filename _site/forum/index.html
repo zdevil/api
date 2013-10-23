@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="description" content="">
     <meta name="author" content="">
     
@@ -26,7 +26,7 @@
         <!-- Static navbar -->
         <div class="navbar-wrapper">
             <div class="navbar navbar-fixed-top navbar-default ">
-                <div class="container okta-navbar">
+                <div class="container-non-responsive okta-navbar">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="icon-bar"></span>
@@ -65,6 +65,7 @@
                             
                             
                             
+                            <li><a href="/documentation/index.html" data-num="1">Docs</a></li>
                             
                             
                             
@@ -95,7 +96,10 @@
                             
                             
                             
-                            <li><a href="/documentation/index.html" data-num="2">Docs</a></li>
+                            
+                            
+                            
+                            
                             
                             
                             
@@ -110,6 +114,8 @@
                             
                             
                             <li><a href="/sdks/index.html" data-num="2">SDKs</a></li>
+                            
+                            
                             
                             
                             
@@ -184,16 +190,18 @@
                             
                             
                             
+                            
+                            
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div id="wrapper">
-<div class="container">
+<div class="container-non-responsive">
    <div class="side-container">
       <div class="row row-offcanvas row-offcanvas-right"  id="f-wrapper"  style="background-color:white; min-height: 1200px;">
-         <div class="col-xs-12 col-md-10 col-md-offset-1">
+         <div class="col-10 col-offset-1">
                <div id="section-">
                   <h1 style="margin-top:20px;">Okta Discussions</h1>
                </div>
@@ -203,7 +211,7 @@
             </div>
 
 
-    <div class="col-xs-12 col-md-5 col-md-offset-4">
+    <div class="col-5 col-offset-4">
          <form id="stackoverflow_form" action="http://stackoverflow.com/search" target="_blank" _lpchecked="1">
             <div id="stackoverflow_search_cntr" class="icon_input mha mbl pbm">
                <input type="hidden" name="tag" value="[okta]">
@@ -212,10 +220,10 @@
          </form>
       </div>
 
-         <div class="col-xs-12 col-md-10 col-md-offset-1">
+         <div class="col-10 col-offset-1">
             <h2>Latest questions</h2>
          </div>
-         <div class="col-xs-12 col-md-10 col-md-offset-1">
+         <div class="col-10 col-offset-1">
             <ul class="stackoverflow-feed pull-left" id="forum-question" data-limit="30"></ul>
          </div>
 

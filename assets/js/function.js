@@ -46,7 +46,7 @@ $(document).ready(function() {
 $(window).load(function() {
   $("#sidebar ul").each(function()
   {
-     if($(this).has("ul li").next('ul').length)
+     if($(this).has("ul li").children('ul').length)
     {
         $(this).find('a').before("<span class='sub_header_arrow'></span>");
    }

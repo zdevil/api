@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="description" content="">
     <meta name="author" content="">
     
@@ -29,7 +29,7 @@
         <!-- Static navbar -->
         <div class="navbar-wrapper">
             <div class="navbar navbar-fixed-top navbar-default ">
-                <div class="container okta-navbar">
+                <div class="container-non-responsive okta-navbar">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="icon-bar"></span>
@@ -68,6 +68,7 @@
                             
                             
                             
+                            <li><a href="/documentation/index.html" data-num="1">Docs</a></li>
                             
                             
                             
@@ -98,7 +99,10 @@
                             
                             
                             
-                            <li><a href="/documentation/index.html" data-num="2">Docs</a></li>
+                            
+                            
+                            
+                            
                             
                             
                             
@@ -113,6 +117,8 @@
                             
                             
                             <li><a href="/sdks/index.html" data-num="2">SDKs</a></li>
+                            
+                            
                             
                             
                             
@@ -187,19 +193,23 @@
                             
                             
                             
+                            
+                            
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div id="wrapper">
-<div class="container">
+<div class="container-non-responsive">
   <div class="row row-offcanvas row-offcanvas-right" id="f-wrapper">
-    <div class="col-xs-12 col-md-1 sidebar-offcanvas" id="sidebar">
+    <div class="col-3 sidebar-offcanvas" id="sidebar">
+      <noscript>
+         
+         Javascript disabled
+    </noscript>
     </div>
-    <div class="col-xs-1 col-md-3">
-    </div>
-    <div class="col-xs-12 col-md-9 .col-lg-9" id="f-content">
+    <div class="col-9 col-offset-3" id="f-content">
       
       <div style="margin-left:2%;">
         <div id="welcome" class="twocolordiv">
@@ -352,7 +362,8 @@ see the <a href="../endpoints/events.md">Events</a> API for example.</p>
 <p>Pagination links are included in the <a href="http://tools.ietf.org/html/rfc5988">Link
 header</a>. It is <strong>important</strong> to
 follow these Link header values instead of constructing your own URLs.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Link: &lt;https://yoursubdomain.okta.com/api/v1/users?after=00ubfjQEMYBLRUWIEDKK; rel=&quot;next&quot;,
+<div class="highlight"><pre><code class="text language-text" data-lang="text">Link: 
+&lt;https://yoursubdomain.okta.com/api/v1/users?after=00ubfjQEMYBLRUWIEDKK; rel=&quot;next&quot;,
   &lt;https://yoursubdomain.okta.com/api/v1/users?after=00ub4tTFYKXCCZJSGFKM&gt;; rel=&quot;self&quot;
 </code></pre></div>
 <p>The possible <code>rel</code> values are:</p>
@@ -797,6 +808,8 @@ follow these Link header values instead of constructing your own URLs.</p>
               
           
         
+        
+          
         
           
         
@@ -8102,6 +8115,8 @@ Link: &lt;https://your-domain.okta.com/api/v1/events?after=tevZxTo4IyHR9yUHIFdU0
         
           
         
+          
+        
         
          <span class="hide page_block_name" data-block="Examples">Examples</span>
          
@@ -8261,6 +8276,8 @@ token to get a session cookie.</p>
               
           
         
+        
+          
         
           
         

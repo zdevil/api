@@ -2,10 +2,9 @@
 layout: default
 title: Docs
 description: "Okta developers"
-weight: 2
+weight: 1
 position: nav
 ---
-
 
 {% assign count = '0' %}
 <div style="margin-left:2%;">
@@ -17,11 +16,8 @@ position: nav
 			<p>&nsp;</p>
 		</div>
 	</div>
-
-	
-	
 	{% for post in site.posts %}
-{% capture count %}{{ count | plus: '1' }}{% endcapture %}
+	{% capture count %}{{ count | plus: '1' }}{% endcapture %}
 	<div id="section-{{count}}" class="twocolordiv">
 		<div class="text">
 
@@ -34,7 +30,6 @@ position: nav
 	</div>
 	{% endfor %}
 </div>
-
 <div id="home">
   <h1>Blog Posts</h1>
   <ul class="posts">

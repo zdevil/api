@@ -54,6 +54,7 @@ redcloth:
 
 sitemap:
   filename: "/site-map.xml"
+safe: true
 
 folder_priority:
 - text: Getting Started
