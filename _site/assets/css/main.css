@@ -266,51 +266,7 @@ Footer
   margin-right: 25px;
   font-weight: 100 !important;
 }
-.social-icons{
-  margin-top: 15px;
-}
-.social-icons a {
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  zoom: 1;
-  *display: inline;
-  margin-top: -4px;
-  text-align: right;
-  width: 25px;
-  height: 24px;
-  margin-right: 5px;
-  background-repeat: no-repeat;
-  opacity: 0.75;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
-}
-.social-icons a span {
-  position: absolute;
-  left: -999em;
-}
-.social-icons a.youtube-icon {
-  background: url(../img/social_icons.png) 0 0;
-}
-.social-icons a.facebook {
-  background: url(../img/social_icons.png) -25px 0;
-}
-.social-icons a.twitter {
-  background: url(../img/social_icons.png) -50px 0;
-}
-.social-icons a.rss {
-  background: url(../img/social_icons.png) -75px 0;
-}
-.social-icons a.linkedin {
-  background: url(../img/social_icons.png) -100px 0;
-}
-.social-icons a.googleplus {
-  background: url(../img/social_icons.png) -125px 0;
-}
-.social-icons a:hover {
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
+
 #forum-question{
   list-style: none;
   margin: 0 auto;
@@ -343,23 +299,19 @@ Footer
   font-size: 15px;
 }
 
-.valprop {
-  background: #065273 url(../img/valprop_bg_pattern.png) 0 0 repeat;
-  border-bottom: 5px solid #0976a6;
+.navbar-brand {
+  background: url(../img/okta-logo.png) no-repeat;
+  width: 140px;
+  height: 50px;
+  margin-top: 17px;
 }
-#valprop-inner{
-  background: url(../img/valprop_app_network.png) 100% 0 no-repeat;
-  height: 157px;
-  margin-left: 110px
+.logo-text {
+  position: absolute;
+  top: 40px;
+  left: 320px;
+  font-size: 16px;
+  color: #fff;
 }
-
-.navbar-brand{
-  background-image: url(../img/okta-logo.png);
-  width: 100px;
-  height: 40px;
-  margin-top: 15px;
-}
-
 /* Wrapper for page content to push down footer */
 #wrapper {
   min-height: 95%;

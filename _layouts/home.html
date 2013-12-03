@@ -1,22 +1,9 @@
 {% include header.html %}
-
+<div class="toc"></div>
 <div class="container-non-responsive">
 	<div class="side-container">
 		<div class="row row-offcanvas row-offcanvas-right" id="f-wrapper">
-			<div class="col-3" id="sidebar-sdks">
-				<ul id="menu-page" class="menu">
-					<li class="h1-toc-depth"><a >Getting Started</a></li>
-
-								{% for my_page in site.pages %}
-								{% if my_page.position != 'nav' %}
-								<li class="h2-toc-depth">
-									<a href="{{ my_page.url }}" data-position="{{my_page.position}}">{{ my_page.title }}</a>
-								</li>
-								{% endif %}
-								{% endfor %}
-				</ul>
-			</div>
-			<div class="col-9 col-9" style="background-color:white; border-left: 1px solid #ccc; min-height: 800px;">
+			<div class="col-12" style="background-color:white; border-left: 1px solid #ccc; min-height: 800px;">
 				<div style="margin-left:2%;">
 				{% capture home %}{% include home.md %}{% endcapture %}
 				{{ home | markdownify }}
