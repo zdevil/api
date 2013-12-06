@@ -27,14 +27,20 @@ $(document).ready(function() {
          $(function() {
            var toc = $("#sidebar").tocify({ 
             highlightDefault: false,
+            scrollHistory: false,
+            highlightOnScroll: true,
+            showAndHideOnScroll: true,
             showAndHide: true,
-            scrollTo: 80,
-            ignoreSelector: '.ignored',
-            selectors: "h1,h2" });
-           // Writes all of the current plugin options to the console
-                  console.log(toc.options);
+            extendPage: false,
+            context: "body",
+            history: false,
+            scrollTo: 70,
+            showEffect: "show",
+            showEffectSpeed: "fast",
+            smoothScrollSpeed: "fast",
+            hideEffect: "slideUp",
+            selectors: "h1,h2,h3" });
         });
-
         // function ISODateString(d){
         //   function pad(n){return n<10 ? '0'+n : n}
         //   return d.getUTCMonth()+'-'
@@ -45,14 +51,15 @@ $(document).ready(function() {
         //       + pad(d.getUTCSeconds());
         // }
 });
-// $(window).load(function() {
-//   $("#sidebar ul").each(function()
-//   {
-//      if($(this).has("ul li").children('ul').length)
-//     {
-//         $(this).find('a').before("<span class='sub_header_arrow'></span>");
-//    }
-//   })
-// });
+$(window).load(function() {
+  $("#sidebar ul").each(function()
+  {
+     if($(this).has("ul li").children('ul').length)
+    {
+        $(this).find('a').before("<span class='sub_header_arrow'></span>");
+   }
+  })
+});
+
 
 

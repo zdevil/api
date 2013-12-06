@@ -2,8 +2,8 @@
 <div class="toc"></div>
 <div class="container-non-responsive">
 	<div class="side-container">
-		<div class="row row-offcanvas row-offcanvas-right" id="f-wrapper">
-			<div class="col-12" style="background-color:white; border-left: 1px solid #ccc; min-height: 800px;">
+		<div class="row row-offcanvas row-offcanvas-right">
+			<div class="col-12" style="background-color:white; border: 1px solid #ccc; min-height: 800px;">
 				<div style="margin-left:2%;">
 				{% capture home %}{% include home.md %}{% endcapture %}
 				{{ home | markdownify }}
@@ -12,6 +12,4 @@
 		</div>
 	</div>
 </div>
-
-
  {% include footer.html %} 

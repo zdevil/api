@@ -333,7 +333,7 @@
                 if(self.options.showAndHide) {
 
                     // Triggers the click event on the currently focused TOC item
-                    elem.click();
+                    //elem.click();
 
                 }
 
@@ -398,7 +398,8 @@
 
             }).append($("<a/>", {
 
-                "text": self.text()
+                "text": self.text(),
+                 "href": '#'+hashValue
 
             }));
             item.wrap('<span/>');
@@ -614,44 +615,44 @@
 
                             currentElem;
 
-                        if(self.options.extendPage) {
+                        // if(self.options.extendPage) {
 
-                            // If the user has scrolled to the bottom of the page and the last toc item is not focused
-                            if((self.webkit && winScrollTop >= scrollHeight - winHeight - self.options.extendPageOffset) || (!self.webkit && winHeight + winScrollTop > docHeight - self.options.extendPageOffset)) {
+                        //     // If the user has scrolled to the bottom of the page and the last toc item is not focused
+                        //     if((self.webkit && winScrollTop >= scrollHeight - winHeight - self.options.extendPageOffset) || (!self.webkit && winHeight + winScrollTop > docHeight - self.options.extendPageOffset)) {
 
-                                if(!$(extendPageClass).length) {
+                        //         if(!$(extendPageClass).length) {
 
-                                    lastElem = $('div[data-unique="' + $(itemClass).last().attr("data-unique") + '"]');
+                        //             lastElem = $('div[data-unique="' + $(itemClass).last().attr("data-unique") + '"]');
 
-                                    if(!lastElem.length) return;
+                        //             if(!lastElem.length) return;
 
-                                    // Gets the top offset of the page header that is linked to the last toc item
-                                    lastElemOffset = lastElem.offset().top;
+                        //             // Gets the top offset of the page header that is linked to the last toc item
+                        //             lastElemOffset = lastElem.offset().top;
 
-                                    // Appends a div to the bottom of the page and sets the height to the difference of the window scrollTop and the last element's position top offset
-                                    $(self.options.context).append($("<div />", {
+                        //             // Appends a div to the bottom of the page and sets the height to the difference of the window scrollTop and the last element's position top offset
+                        //             $(self.options.context).append($("<div />", {
 
-                                        "class": extendPageClassName,
+                        //                 "class": extendPageClassName,
 
-                                        "height": Math.abs(lastElemOffset - winScrollTop) + "px",
+                        //                 "height": Math.abs(lastElemOffset - winScrollTop) + "px",
 
-                                        "data-unique": extendPageClassName
+                        //                 "data-unique": extendPageClassName
 
-                                    }));
+                        //             }));
 
-                                    if(self.extendPageScroll) {
+                        //             if(self.extendPageScroll) {
 
-                                        currentElem = self.element.find('li.active');
+                        //                 currentElem = self.element.find('li.active');
 
-                                        self._scrollTo($('div[data-unique="' + currentElem.attr("data-unique") + '"]'));
+                        //                 self._scrollTo($('div[data-unique="' + currentElem.attr("data-unique") + '"]'));
 
-                                    }
+                        //             }
 
-                                }
+                        //         }
 
-                            }
+                        //     }
 
-                        }
+                        // }
 
                         // The zero timeout ensures the following code is run after the scroll events
                         setTimeout(function() {
@@ -668,17 +669,29 @@
                                 anchors = $(self.options.context).find("div[data-unique]"),
 
                                 anchorText;
-
+                                
                             // Determines the index of the closest anchor
-                            anchors.each(function(idx) {
-                                var distance = Math.abs(($(this).next().length ? $(this).next() : $(this)).offset().top - winScrollTop - self.options.highlightOffset);
-                                if (closestAnchorDistance == null || distance < closestAnchorDistance) {
-                                    closestAnchorDistance = distance;
-                                    closestAnchorIdx = idx;
-                                } else {
-                                    return false;
-                                }
-                            });
+                            // anchors.each(function(idx) {
+                            //     var distance = Math.abs(($(this).next().length ? $(this).next() : $(this)).offset().top - winScrollTop - self.options.highlightOffset);
+                            //     if (closestAnchorDistance == null || distance < closestAnchorDistance) {
+                            //         closestAnchorDistance = distance;
+                            //         closestAnchorIdx = idx;
+                            //     } else {
+                            //         return false;
+                            //     }
+                            // });
+                            // for (var i = 0, length = anchors.length; i < length; i++) {
+                            //     console.log(anchors[i]);
+                            //    var distance = Math.abs(($(this).next().length ? $(this).next() : $(this)).offset().top - winScrollTop - self.options.highlightOffset);
+                            //     if (closestAnchorDistance == null || distance < closestAnchorDistance) {
+                            //         closestAnchorDistance = distance;
+                            //         closestAnchorIdx = idx;
+                            //     } else {
+                            //         return false;
+                            //     }
+                            // }
+
+
 
                             anchorText = $(anchors[closestAnchorIdx]).attr("data-unique");
 
@@ -696,14 +709,14 @@
 
                             }
 
-                            if(self.options.scrollHistory) {
+                            // if(self.options.scrollHistory) {
 
-                                if(window.location.hash !== "#" + anchorText) {
+                            //     if(window.location.hash !== "#" + anchorText) {
 
-                                    window.location.replace("#" + anchorText);
+                            //         window.location.replace("#" + anchorText);
 
-                                }
-                            }
+                            //     }
+                            // }
 
                             // If the `showAndHideOnScroll` option is true
                             if(self.options.showAndHideOnScroll && self.options.showAndHide) {
@@ -996,3 +1009,34 @@
     });
 
 })); //end of plugin
+
+jQuery.fn.quickEach = (function(){
+    
+    var jq = jQuery([1]);
+    
+    return function(c) {
+ 
+        var i = -1, el, len = this.length;
+        
+        try {
+            
+            while (
+                 ++i < len &&
+                 (el = jq[0] = this[i]) &&
+                 c.call(jq, i, el) !== false
+            );
+            
+        } catch(e){
+ 
+            delete jq[0];
+            throw e;
+ 
+        }
+ 
+        delete jq[0];
+ 
+        return this;
+    
+    };
+    
+}());
